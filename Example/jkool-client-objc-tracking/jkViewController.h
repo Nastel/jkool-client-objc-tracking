@@ -9,5 +9,14 @@
 @import UIKit;
 
 @interface jkViewController : UIViewController
+{
+    IBOutlet UIButton *button1;
+    IBOutlet UIButton *button2;
+    IBOutlet UIButton *button3;
+}
+
+- (IBAction)buttonOneClick:(id)sender;
+- (IBAction)buttonTwoClick:(id)sender;
+- (IBAction)buttonThreeClick:(id)sender;
 
 @end

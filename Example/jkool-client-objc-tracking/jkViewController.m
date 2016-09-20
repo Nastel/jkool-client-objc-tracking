@@ -7,6 +7,7 @@
 //
 
 #import "jkViewController.h"
+#import "jKoolCurrentViewController.h"
 
 @interface jkViewController ()
 
@@ -17,13 +18,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	jKoolCurrentViewController *sharedManager = [jKoolCurrentViewController sharedManager];
+    [sharedManager setToken:@""];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)buttonOneClick:(id)sender {
+    
+}
+
+- (IBAction)buttonTwoClick:(id)sender {
+    
+}
+
+- (IBAction)buttonThreeClick:(id)sender {
+    
+}
+
+// If using this ViewController as the handler.
+- (void) handlejKoolResponse:(NSData *) data  {
+    NSString * str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
 }
 
 @end

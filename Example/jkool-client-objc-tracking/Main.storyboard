@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Jk View Controller-->
         <scene sceneID="wQg-tq-qST">
             <objects>
                 <viewController id="whP-gf-Uak" customClass="jkViewController" sceneMemberID="viewController">
@@ -14,10 +14,52 @@
                         <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyt-Jy-iQq">
+                                <rect key="frame" x="20" y="28" width="280" height="172"/>
+                                <state key="normal" title="Button A"/>
+                                <connections>
+                                    <action selector="buttonOneClick:" destination="whP-gf-Uak" eventType="touchDown" id="j7G-Sc-jGf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vp-5t-ma9">
+                                <rect key="frame" x="20" y="208" width="280" height="172"/>
+                                <state key="normal" title="Button B"/>
+                                <connections>
+                                    <action selector="buttonThreeClick:" destination="whP-gf-Uak" eventType="touchDown" id="Qc3-VY-x6R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH1-m7-uqg">
+                                <rect key="frame" x="20" y="388" width="280" height="172"/>
+                                <state key="normal" title="Button C"/>
+                                <connections>
+                                    <action selector="buttonThreeClick:" destination="whP-gf-Uak" eventType="touchDown" id="85m-t3-Hks"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Vp-5t-ma9" firstAttribute="top" secondItem="zyt-Jy-iQq" secondAttribute="bottom" constant="8" symbolic="YES" id="5r2-Gx-bH5"/>
+                            <constraint firstAttribute="trailing" secondItem="zyt-Jy-iQq" secondAttribute="trailing" constant="20" symbolic="YES" id="62u-Hv-ggo"/>
+                            <constraint firstItem="YH1-m7-uqg" firstAttribute="top" secondItem="0Vp-5t-ma9" secondAttribute="bottom" constant="8" symbolic="YES" id="7iW-zN-iA6"/>
+                            <constraint firstItem="0Vp-5t-ma9" firstAttribute="height" secondItem="zyt-Jy-iQq" secondAttribute="height" id="DSY-36-13A"/>
+                            <constraint firstItem="YH1-m7-uqg" firstAttribute="width" secondItem="zyt-Jy-iQq" secondAttribute="width" id="ETT-tP-MIS"/>
+                            <constraint firstAttribute="trailing" secondItem="0Vp-5t-ma9" secondAttribute="trailing" constant="20" symbolic="YES" id="I1H-TW-bFs"/>
+                            <constraint firstItem="YH1-m7-uqg" firstAttribute="top" secondItem="0Vp-5t-ma9" secondAttribute="bottom" constant="8" symbolic="YES" id="PpU-IA-9Ft"/>
+                            <constraint firstItem="0Vp-5t-ma9" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="20" symbolic="YES" id="QoF-RQ-kV2"/>
+                            <constraint firstItem="YH1-m7-uqg" firstAttribute="height" secondItem="zyt-Jy-iQq" secondAttribute="height" id="Uqs-2T-NV8"/>
+                            <constraint firstItem="zyt-Jy-iQq" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="8" symbolic="YES" id="WmU-u4-6fI"/>
+                            <constraint firstItem="0Vp-5t-ma9" firstAttribute="width" secondItem="zyt-Jy-iQq" secondAttribute="width" id="hek-FQ-U7u"/>
+                            <constraint firstAttribute="trailing" secondItem="YH1-m7-uqg" secondAttribute="trailing" constant="20" symbolic="YES" id="lCk-kq-ee3"/>
+                            <constraint firstItem="YH1-m7-uqg" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="20" symbolic="YES" id="nwz-lt-tbd"/>
+                            <constraint firstItem="zyt-Jy-iQq" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="20" symbolic="YES" id="rAm-BJ-OGg"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="YH1-m7-uqg" secondAttribute="bottom" constant="8" symbolic="YES" id="tLa-bj-B5i"/>
+                            <constraint firstItem="0Vp-5t-ma9" firstAttribute="top" secondItem="zyt-Jy-iQq" secondAttribute="bottom" constant="8" symbolic="YES" id="xLL-Af-tVS"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

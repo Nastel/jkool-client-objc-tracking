@@ -1,0 +1,6 @@
+framework module Pods_jkool_client_objc_tracking_Example {
+  umbrella header "Pods-jkool-client-objc-tracking_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
