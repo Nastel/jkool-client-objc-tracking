@@ -4,6 +4,7 @@
 
 @synthesize vc;
 @synthesize token;
+@synthesize activity;
 
 #pragma mark Singleton Methods
 

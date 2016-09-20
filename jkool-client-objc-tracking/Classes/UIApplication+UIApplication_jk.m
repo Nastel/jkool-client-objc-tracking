@@ -20,6 +20,7 @@
 #import "UIApplication+UIApplication_jk.h"
 #import <objc/runtime.h>
 #import "jkEvent.h"
+#import "jkActivity.h"
 #import "jKoolStreaming.h"
 #import "jkLocation.h"
 #import <UIKit/UIKit.h>
@@ -58,6 +59,7 @@ jkLocation *location;
     [jKoolEvent setUser:@"Cathy"];
     [jKoolEvent setGeoAddr:[location getCoordinates]];
     [jKoolEvent setResource:@"my resource"];
+    [jKoolEvent setParentTrackId:[[sharedManager activity] trackingId]];
     [jkStreaming stream:jKoolEvent forUrl:@"event"];
     
     return [self heap_sendAction:action to:target from:sender forEvent:event];

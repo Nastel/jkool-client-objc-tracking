@@ -19,7 +19,7 @@
 {
     [super viewDidLoad];
 	jKoolCurrentViewController *sharedManager = [jKoolCurrentViewController sharedManager];
-    [sharedManager setToken:@""];
+    [sharedManager setToken:@"HdC0YR5u58UTNyPByFe7GXuHgLFtFx28"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,6 +43,7 @@
 // If using this ViewController as the handler.
 - (void) handlejKoolResponse:(NSData *) data  {
     NSString * str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"Streaming Callback: %@",str);
 
 }
 
