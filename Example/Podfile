@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'jkool-client-objc-tracking_Example' do
+  pod 'jkool-client-objc-tracking', :path => '../'
+
+  target 'jkool-client-objc-tracking_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
