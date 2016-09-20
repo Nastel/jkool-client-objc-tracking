@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 
+#import "jKoolApplicationDelegate.h"
 #import "jKoolCurrentViewController.h"
 #import "UIApplication+UIApplication_jk.h"
 #import "UIViewController+UIViewController_jk.h"

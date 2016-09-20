@@ -6,8 +6,12 @@
 //
 //
 
-@import UIKit;
 
-@interface jkAppDelegate : UIResponder <UIApplicationDelegate>
+@interface jKoolApplicationDelegate : NSObject
+
++ (void)streamjKoolActivity;
++ (void)createjKoolActivity;
++ (NSString *)platformNiceString;
++ (NSString *)platformRawString;
 
 @end

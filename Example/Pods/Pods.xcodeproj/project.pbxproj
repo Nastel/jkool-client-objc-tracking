@@ -16,65 +16,72 @@
 		138EEC23D08E0FEDCD2156AADDFC02C1 /* jkool-client-objc-api-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A969B676969A4791C5615B16E5AC65ED /* jkool-client-objc-api-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B246BD0CC7AEA49AEBC8DF0815C4E55 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B521347318B5B69C179C9E3A40A14EB7 /* Security.framework */; };
 		1E46665F03BF058E75F67DB3AFC5017F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6807D3944D17D178CFD5FE22406E4 /* Foundation.framework */; };
-		1F497A16D9FAA6FD31C3891C29E87510 /* UIViewController+UIViewController_jk.h in Headers */ = {isa = PBXBuildFile; fileRef = BE85F412C402EE2E6B957934B54CDD7B /* UIViewController+UIViewController_jk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		23BC2E0A7B0FBA608D73A1B8946D2030 /* jKoolCallbackHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = F2F922C88E1CD706C79FD55B5A7078E4 /* jKoolCallbackHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26FC241F80EDB147C730D24D39CFBEE4 /* jKoolStreaming.m in Sources */ = {isa = PBXBuildFile; fileRef = C7205EFA8C8884C03A124203A411426C /* jKoolStreaming.m */; };
 		2D75127C2E24A03FE0148DE08B465C03 /* SocketRocket-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB7DA54362572DF93ADAA51E3DFA783 /* SocketRocket-dummy.m */; };
 		2F7CA78AF671A6B8E80BDFF1E763E481 /* Pods-jkool-client-objc-tracking_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4381D57EBA43368460C0672CEA750171 /* Pods-jkool-client-objc-tracking_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34F17BE643E77EC544387EE549328A7A /* jKoolCurrentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A3D1E4F955619BDF36CDDFCC98B6C99F /* jKoolCurrentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D01988D6DB4F9D001F91EA0D6C4331E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6807D3944D17D178CFD5FE22406E4 /* Foundation.framework */; };
 		3E309CBA6017AC03D2FE0B664472DC11 /* jKoolService.m in Sources */ = {isa = PBXBuildFile; fileRef = 09116FB8D8797FFB9363DB583FF24F01 /* jKoolService.m */; };
+		40537D18D13AE1BD4D7D41B0900B23ED /* jkool_client_objc_api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1CC7A0EC025D3EFB4E1869EF644D6B /* jkool_client_objc_api.framework */; };
+		425856F927ED18FE4E60A1A03757C925 /* UIApplication+UIApplication_jk.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B96CF3714A308FF9BD1B9E052145C24 /* UIApplication+UIApplication_jk.m */; };
 		430D7BF52AFC14143F5BBF654F1C7FEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6807D3944D17D178CFD5FE22406E4 /* Foundation.framework */; };
 		444B03F6FF160C5ECCA9B74BE9FD9464 /* jkSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F6D5011A789D886788884C0A4F932C /* jkSnapshot.m */; };
+		469AC107FD34A040999030C100F73A8A /* UIViewController+UIViewController_jk.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DFD25CE84951F3CA0B27EB49120FE93 /* UIViewController+UIViewController_jk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		473C6FADABFB93B2DDE394F3CFD3BD0D /* SocketRocket-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6350BEC6D088C973DF5DC9B4CD64907D /* SocketRocket-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4A61959C1D91D361006E8554 /* jKoolApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A61959A1D91D361006E8554 /* jKoolApplicationDelegate.h */; };
-		4A61959D1D91D361006E8554 /* jKoolApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A61959B1D91D361006E8554 /* jKoolApplicationDelegate.m */; };
+		4FB22C50BA4901B036E7623884A8FF03 /* jKoolApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 777A6A556BCF5BE6092556E156D558DF /* jKoolApplicationDelegate.m */; };
 		5109DD4B7C221F840FC4A20B6457B3FD /* jkActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAEF150A9281927E640E3E3232E1FFA /* jkActivity.m */; };
 		530A8D4860EF930AC722BE48CF6434C3 /* jkEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B4C89FC8B577C0C5389C027846C627 /* jkEvent.m */; };
 		53463A995AC71BD565968195FC343183 /* jKoolCallbackHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5980BDE6661F9D21B64F2103CA0767FD /* jKoolCallbackHandler.m */; };
+		5AD037E88AC974F5294F09B1C6B1D5AF /* jkool-client-objc-tracking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E96227662EF7BCFCB3E6CEC01A586002 /* jkool-client-objc-tracking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63833ECCB68ACE5BD649F056F9293B11 /* jKoolWebsocketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 55B14F408CD6524AF95A0F1ADDA452F5 /* jKoolWebsocketClient.m */; };
 		6D83301520437866949E1A4A7C8BD9F0 /* jkConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 624093BFA6FD68938E62397A8AA3B1A6 /* jkConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DBF61C7683D07C60972E2DA63B4772E /* Pods-jkool-client-objc-tracking_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 56956B0A4F36722321256BDC8D8F3CEE /* Pods-jkool-client-objc-tracking_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E2384389E0703670678073E01428C2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6807D3944D17D178CFD5FE22406E4 /* Foundation.framework */; };
 		73C27753582BAB9D259A7B9858CB1336 /* jkActivity.h in Headers */ = {isa = PBXBuildFile; fileRef = 89EEB1D368D70F157740CA7E9719B2B6 /* jkActivity.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78DCE059950B6CE5031A8EF2B135D780 /* JsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 33F1F221BD8119C1F62D25E171F2CA2F /* JsonParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78E8B85BC6BE0B516057784AE28C2029 /* JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2434E218777BE34A37C404BAA41988CD /* JsonParser.m */; };
 		79B98D26D44C03A7D801AC3B6B575F46 /* Pods-jkool-client-objc-tracking_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D162B4435E7994E6B5E2072803F908 /* Pods-jkool-client-objc-tracking_Example-dummy.m */; };
 		81EFFEABEBC08C4C93E2247D0D5695A0 /* jKoolAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DC91641A8DA4D1DC40E3DB0F6192FDB4 /* jKoolAppDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		821AE688F21717C5679ADA5ED942C5CA /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71037FC1BEB8E636562838AEC5824D84 /* SocketRocket.framework */; };
 		83271CE44AEAC792AC65760A6E03FC50 /* SRWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 86E6A28507EA5D628A1FFB874666FF3C /* SRWebSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		85E16E2181A03BFE2CA5BA85EE7EBB65 /* jkool_client_objc_api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1CC7A0EC025D3EFB4E1869EF644D6B /* jkool_client_objc_api.framework */; };
-		87EC1B9A42E8A64DAC9E1CE9396E2902 /* UIViewController+UIViewController_jk.m in Sources */ = {isa = PBXBuildFile; fileRef = 497D4D5AD99F1E664DA5BDCDC3AB9F3F /* UIViewController+UIViewController_jk.m */; };
 		886637D02EA32358F3CD99ECE44F2AFD /* jkTrackable.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9159DE612247F4C2C787A558E52F69 /* jkTrackable.m */; };
+		88BD398B26254ED63BE6970FFB84AEDE /* jKoolCurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C4ED09E710B2C10C301CC6442F345C /* jKoolCurrentViewController.m */; };
 		8B09456F1A8D0F95CFBD8864EB39B8CD /* jkProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 674B72BA867D6DC9453920C4581EEB85 /* jkProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D5026D09936734358C57A4FCE1842CF /* jKoolQuerying.h in Headers */ = {isa = PBXBuildFile; fileRef = DFCC93D467D7162B2D4E978D8181F737 /* jKoolQuerying.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8EA1E45DB33F53DD3CD928ECFE905A4A /* jKoolWebsocketCallbackHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F30DB0794CF5693AF04FBFD17EF9852A /* jKoolWebsocketCallbackHandler.m */; };
+		90B110044696B2C3CBA5FAF45C7C6BB6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6807D3944D17D178CFD5FE22406E4 /* Foundation.framework */; };
 		90D7AC0A021EAD08164667FF112B85E6 /* jkEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 15EFEE64C25FAC8020D43A33B1F8C78A /* jkEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C59A515E26F67B66C2C5CEB2C185770 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252E00A0D589C4C00626FD5260D2BA77 /* CFNetwork.framework */; };
+		9C61BA9E05DC5A9A73036EB85263D6CA /* UIViewController+UIViewController_jk.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D93159CD2FD13832FC97BF70D4DAC /* UIViewController+UIViewController_jk.m */; };
+		9D70F24B4FA044ECF2102DEE8B43ACD0 /* UIApplication+UIApplication_jk.h in Headers */ = {isa = PBXBuildFile; fileRef = 0056CC9DB31D77866FE7852854A7749A /* UIApplication+UIApplication_jk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0B7CDA4074641470CAC5051C3073A78 /* jKoolQuerying.m in Sources */ = {isa = PBXBuildFile; fileRef = 338277DF97D4A4A80656EB0ACFB43EAD /* jKoolQuerying.m */; };
+		A19B4C35922766AA5F82CB801D3916FC /* jKoolApplicationDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 77C93B56B3350A525B3796D797DB86DC /* jKoolApplicationDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A95BC9DE5D8E93A586424C572076D330 /* jKoolWebsocketCallbackHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 770F365ADE7EEF2C94707BED693BBE17 /* jKoolWebsocketCallbackHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AB592430735BF2621E06A39E51E6359F /* jKoolCurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E525D8EAB851B8874089ECB1E4785E37 /* jKoolCurrentViewController.m */; };
 		AB9DB6D613E9DA38444541D9F59DFD2E /* jkConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 290461460C2A0801E1ED01055540AAEF /* jkConstants.m */; };
 		ABB1C6FEB2DFDD23D8422FE0D9026272 /* Pods-jkool-client-objc-tracking_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B8AD6DAA3D4C375C8E7FC661EB7B53BA /* Pods-jkool-client-objc-tracking_Tests-dummy.m */; };
 		ACF6595CDE8469AF84DBEA2C140ECCB5 /* jKoolStreaming.h in Headers */ = {isa = PBXBuildFile; fileRef = B4BF606DE0D22CA99D5BFD0FD38DBD7A /* jKoolStreaming.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B12130A2FB621A8942A5E30CC9ADBBBA /* jKoolAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAA80B43774365CDE2F230EF029DC3B /* jKoolAppDelegate.m */; };
 		B144E75F1D2A23D5F381BEBD1082049C /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71037FC1BEB8E636562838AEC5824D84 /* SocketRocket.framework */; };
-		B3D8881B14BF51D91FED37B84C4FEBE1 /* jkool-client-objc-tracking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E96227662EF7BCFCB3E6CEC01A586002 /* jkool-client-objc-tracking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB16F1F1CBA67CC20F0449E17B2D3D90 /* jkLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C2393A3765931C4D5A5FA205B97858F /* jkLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BB97B587B42082CADEAFE46CAB44A3F3 /* UIApplication+UIApplication_jk.m in Sources */ = {isa = PBXBuildFile; fileRef = E4804BAE3D33462CE4E01797C0D51A7E /* UIApplication+UIApplication_jk.m */; };
-		C1582F126F2E258894BEA9517AA16682 /* jkool-client-objc-tracking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 025441FDE3B3D5B438056B739C6F08DE /* jkool-client-objc-tracking-dummy.m */; };
+		C2271490B51B9395EA6CF30164D4B77E /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71037FC1BEB8E636562838AEC5824D84 /* SocketRocket.framework */; };
 		C23C490B2C783E07434FCCE295E229E8 /* jKoolApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 0016876730DD7A183E62596145C869C7 /* jKoolApplication.m */; };
 		D4717D168CBD4B6DEBDB8966BA149AD6 /* jKoolStreamDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = DCEEC8A8B971F2910A680CF6A8730B5C /* jKoolStreamDeviceInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA677C9BC5B67A00EB877AC17EAD2A1D /* jKoolStreamDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FAD2317D8C5F03D81E8D142BEC1425 /* jKoolStreamDeviceInfo.m */; };
 		DC4FD39794AC1E6935A65FF31DAE53EF /* jKoolService.h in Headers */ = {isa = PBXBuildFile; fileRef = E47E456A523C53B467E78A262F5FBD57 /* jKoolService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB7A72266544ACBDCED8E8C91C234EC2 /* jkSnapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 456208E7D266729183940E3A23B74F16 /* jkSnapshot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB91020B179248A122276813B875C26C /* jkProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 785980F13468C1E82247DC6371524B3E /* jkProperty.m */; };
+		F4FCA5E2909B4440ACDD62AABA1D791F /* jkool-client-objc-tracking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 025441FDE3B3D5B438056B739C6F08DE /* jkool-client-objc-tracking-dummy.m */; };
 		F6283335FA0A41475D41E1D71741B8D7 /* jkLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC085C81194211B967880FD14C41FF3 /* jkLocation.m */; };
-		F7F3CD96FB1E8F5DCD94DC6425291D23 /* UIApplication+UIApplication_jk.h in Headers */ = {isa = PBXBuildFile; fileRef = 8234488C3ECFF5795A1AB12F3AA99769 /* UIApplication+UIApplication_jk.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9F4C3F4B54950F83C1FBF81FEAD4919 /* jKoolCurrentViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF994168908BDDE5EF36F062284AB1DE /* jKoolCurrentViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA26480129327B0AA9ABF2E0B451B7C8 /* SocketRocket.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF1AB720C836D7F58C66FD3DCB14BE6 /* SocketRocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		03F5366C404F6040B360C09861BC169C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C11AC7446A5AB3AFA1A22D14159A5E06;
+			remoteInfo = "jkool-client-objc-api";
+		};
 		5A52129217DEEF423B98AF99F3CB8355 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -89,21 +96,7 @@
 			remoteGlobalIDString = 0CA5414FD215ADE5B2447F299C524763;
 			remoteInfo = SocketRocket;
 		};
-		7122BBE268AFE51AC3A4765C53D9BEE5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0CA5414FD215ADE5B2447F299C524763;
-			remoteInfo = SocketRocket;
-		};
 		7404C2B5CC9B3D97F37C8EC2B832DEE5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C11AC7446A5AB3AFA1A22D14159A5E06;
-			remoteInfo = "jkool-client-objc-api";
-		};
-		804D9D60DFBFD067CD0CB5F7C839F59C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -114,13 +107,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D5E01C9EB1533434DB5FF5796480457E;
+			remoteGlobalIDString = 69743630B87D3571700AE37DD840792D;
 			remoteInfo = "jkool-client-objc-tracking";
+		};
+		F72D2D5285D8E84E1E8CA92B7CF3B852 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0CA5414FD215ADE5B2447F299C524763;
+			remoteInfo = SocketRocket;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0016876730DD7A183E62596145C869C7 /* jKoolApplication.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = jKoolApplication.m; path = jKooliOSStreaming/Classes/jKoolApplication.m; sourceTree = "<group>"; };
+		0056CC9DB31D77866FE7852854A7749A /* UIApplication+UIApplication_jk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIApplication+UIApplication_jk.h"; sourceTree = "<group>"; };
 		025441FDE3B3D5B438056B739C6F08DE /* jkool-client-objc-tracking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "jkool-client-objc-tracking-dummy.m"; sourceTree = "<group>"; };
 		0295FD5709FA706D74A152A5140BA632 /* jkool-client-objc-api.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "jkool-client-objc-api.modulemap"; sourceTree = "<group>"; };
 		03F6D5011A789D886788884C0A4F932C /* jkSnapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = jkSnapshot.m; path = jKooliOSStreaming/Classes/model/jkSnapshot.m; sourceTree = "<group>"; };
@@ -145,11 +146,9 @@
 		4381D57EBA43368460C0672CEA750171 /* Pods-jkool-client-objc-tracking_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-jkool-client-objc-tracking_Example-umbrella.h"; sourceTree = "<group>"; };
 		452A3B0D61A0E9F271186ADB5A08CA74 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		456208E7D266729183940E3A23B74F16 /* jkSnapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = jkSnapshot.h; path = jKooliOSStreaming/Classes/model/jkSnapshot.h; sourceTree = "<group>"; };
-		497D4D5AD99F1E664DA5BDCDC3AB9F3F /* UIViewController+UIViewController_jk.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UIViewController_jk.m"; sourceTree = "<group>"; };
 		49B4C89FC8B577C0C5389C027846C627 /* jkEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = jkEvent.m; path = jKooliOSStreaming/Classes/model/jkEvent.m; sourceTree = "<group>"; };
 		4A129CB3CB7D524F006FD42C426707AE /* Pods-jkool-client-objc-tracking_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-jkool-client-objc-tracking_Example-resources.sh"; sourceTree = "<group>"; };
-		4A61959A1D91D361006E8554 /* jKoolApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jKoolApplicationDelegate.h; sourceTree = "<group>"; };
-		4A61959B1D91D361006E8554 /* jKoolApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jKoolApplicationDelegate.m; sourceTree = "<group>"; };
+		4B96CF3714A308FF9BD1B9E052145C24 /* UIApplication+UIApplication_jk.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+UIApplication_jk.m"; sourceTree = "<group>"; };
 		4E99F78F9C7682E997A1F132EA39494E /* Pods-jkool-client-objc-tracking_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-jkool-client-objc-tracking_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		55B14F408CD6524AF95A0F1ADDA452F5 /* jKoolWebsocketClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = jKoolWebsocketClient.m; path = jKooliOSStreaming/Classes/service/jKoolWebsocketClient.m; sourceTree = "<group>"; };
 		56956B0A4F36722321256BDC8D8F3CEE /* Pods-jkool-client-objc-tracking_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-jkool-client-objc-tracking_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -162,22 +161,26 @@
 		62E47C6E511FA7E13DC2A7228FD5467B /* jkool-client-objc-api.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "jkool-client-objc-api.xcconfig"; sourceTree = "<group>"; };
 		6350BEC6D088C973DF5DC9B4CD64907D /* SocketRocket-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-umbrella.h"; sourceTree = "<group>"; };
 		674B72BA867D6DC9453920C4581EEB85 /* jkProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = jkProperty.h; path = jKooliOSStreaming/Classes/model/jkProperty.h; sourceTree = "<group>"; };
+		6B7D93159CD2FD13832FC97BF70D4DAC /* UIViewController+UIViewController_jk.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UIViewController_jk.m"; sourceTree = "<group>"; };
 		6FBEB1E19EA20E77B85538EAA32211C0 /* jkool-client-objc-tracking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "jkool-client-objc-tracking.xcconfig"; sourceTree = "<group>"; };
 		71037FC1BEB8E636562838AEC5824D84 /* SocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		736ABB5E771FA0A4984C82DE0E8D6C95 /* Pods_jkool_client_objc_tracking_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jkool_client_objc_tracking_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		770F365ADE7EEF2C94707BED693BBE17 /* jKoolWebsocketCallbackHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = jKoolWebsocketCallbackHandler.h; path = jKooliOSStreaming/Classes/service/jKoolWebsocketCallbackHandler.h; sourceTree = "<group>"; };
+		777A6A556BCF5BE6092556E156D558DF /* jKoolApplicationDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = jKoolApplicationDelegate.m; sourceTree = "<group>"; };
+		77C93B56B3350A525B3796D797DB86DC /* jKoolApplicationDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = jKoolApplicationDelegate.h; sourceTree = "<group>"; };
 		77EBA69D382017533246931CF21F01A2 /* Pods-jkool-client-objc-tracking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-jkool-client-objc-tracking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		785980F13468C1E82247DC6371524B3E /* jkProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = jkProperty.m; path = jKooliOSStreaming/Classes/model/jkProperty.m; sourceTree = "<group>"; };
 		7BC085C81194211B967880FD14C41FF3 /* jkLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = jkLocation.m; path = jKooliOSStreaming/Classes/model/jkLocation.m; sourceTree = "<group>"; };
 		7E139E0CB589F7E4B893E2691429A932 /* Pods-jkool-client-objc-tracking_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-jkool-client-objc-tracking_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7F9159DE612247F4C2C787A558E52F69 /* jkTrackable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = jkTrackable.m; path = jKooliOSStreaming/Classes/model/jkTrackable.m; sourceTree = "<group>"; };
-		8234488C3ECFF5795A1AB12F3AA99769 /* UIApplication+UIApplication_jk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIApplication+UIApplication_jk.h"; sourceTree = "<group>"; };
 		86E6A28507EA5D628A1FFB874666FF3C /* SRWebSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SRWebSocket.h; path = SocketRocket/SRWebSocket.h; sourceTree = "<group>"; };
 		883D593B60F82914230FAB32199B5676 /* jkool_client_objc_api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = jkool_client_objc_api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89EEB1D368D70F157740CA7E9719B2B6 /* jkActivity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = jkActivity.h; path = jKooliOSStreaming/Classes/model/jkActivity.h; sourceTree = "<group>"; };
+		8DFD25CE84951F3CA0B27EB49120FE93 /* UIViewController+UIViewController_jk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UIViewController_jk.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9C2393A3765931C4D5A5FA205B97858F /* jkLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = jkLocation.h; path = jKooliOSStreaming/Classes/model/jkLocation.h; sourceTree = "<group>"; };
 		9D6DF251E713F7A435C09C817F2EC815 /* Pods-jkool-client-objc-tracking_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-jkool-client-objc-tracking_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A3D1E4F955619BDF36CDDFCC98B6C99F /* jKoolCurrentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = jKoolCurrentViewController.h; sourceTree = "<group>"; };
 		A50AB303BC27E5CE9505A25A26072469 /* SRWebSocket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SRWebSocket.m; path = SocketRocket/SRWebSocket.m; sourceTree = "<group>"; };
 		A82A3B37797076225FABED3F5968C267 /* jkool-client-objc-api-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "jkool-client-objc-api-prefix.pch"; sourceTree = "<group>"; };
 		A969B676969A4791C5615B16E5AC65ED /* jkool-client-objc-api-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "jkool-client-objc-api-umbrella.h"; sourceTree = "<group>"; };
@@ -187,8 +190,6 @@
 		B57E3D05CAA504DDD952530982713CEE /* jkTrackable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = jkTrackable.h; path = jKooliOSStreaming/Classes/model/jkTrackable.h; sourceTree = "<group>"; };
 		B8AD6DAA3D4C375C8E7FC661EB7B53BA /* Pods-jkool-client-objc-tracking_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-jkool-client-objc-tracking_Tests-dummy.m"; sourceTree = "<group>"; };
 		BA7FB0B374A9451CFEBF1C0A519BF0ED /* SocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE85F412C402EE2E6B957934B54CDD7B /* UIViewController+UIViewController_jk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UIViewController_jk.h"; sourceTree = "<group>"; };
-		BF994168908BDDE5EF36F062284AB1DE /* jKoolCurrentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = jKoolCurrentViewController.h; sourceTree = "<group>"; };
 		C05097524FE45CD3334B036105255721 /* Pods-jkool-client-objc-tracking_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-jkool-client-objc-tracking_Tests.modulemap"; sourceTree = "<group>"; };
 		C2E678158D77A082431764674F2BF8EA /* Pods-jkool-client-objc-tracking_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-jkool-client-objc-tracking_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		C6A6807D3944D17D178CFD5FE22406E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -206,9 +207,8 @@
 		E04C513B30D5BD5C0A6D09878A94AE16 /* jkool-client-objc-tracking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "jkool-client-objc-tracking.modulemap"; sourceTree = "<group>"; };
 		E1E163A446FAD83ED26EA4A1677C56FA /* jkool-client-objc-tracking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "jkool-client-objc-tracking-prefix.pch"; sourceTree = "<group>"; };
 		E47E456A523C53B467E78A262F5FBD57 /* jKoolService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = jKoolService.h; path = jKooliOSStreaming/Classes/service/jKoolService.h; sourceTree = "<group>"; };
-		E4804BAE3D33462CE4E01797C0D51A7E /* UIApplication+UIApplication_jk.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+UIApplication_jk.m"; sourceTree = "<group>"; };
-		E525D8EAB851B8874089ECB1E4785E37 /* jKoolCurrentViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = jKoolCurrentViewController.m; sourceTree = "<group>"; };
 		E96227662EF7BCFCB3E6CEC01A586002 /* jkool-client-objc-tracking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "jkool-client-objc-tracking-umbrella.h"; sourceTree = "<group>"; };
+		E9C4ED09E710B2C10C301CC6442F345C /* jKoolCurrentViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = jKoolCurrentViewController.m; sourceTree = "<group>"; };
 		EB9574CA57620A21EC2D2E8FF1CA086C /* SocketRocket-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-prefix.pch"; sourceTree = "<group>"; };
 		F2F922C88E1CD706C79FD55B5A7078E4 /* jKoolCallbackHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = jKoolCallbackHandler.h; path = jKooliOSStreaming/Classes/service/jKoolCallbackHandler.h; sourceTree = "<group>"; };
 		F30DB0794CF5693AF04FBFD17EF9852A /* jKoolWebsocketCallbackHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = jKoolWebsocketCallbackHandler.m; path = jKooliOSStreaming/Classes/service/jKoolWebsocketCallbackHandler.m; sourceTree = "<group>"; };
@@ -227,21 +227,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A2F6492487A8EF20B9C6F0C15C096362 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90B110044696B2C3CBA5FAF45C7C6BB6 /* Foundation.framework in Frameworks */,
+				40537D18D13AE1BD4D7D41B0900B23ED /* jkool_client_objc_api.framework in Frameworks */,
+				C2271490B51B9395EA6CF30164D4B77E /* SocketRocket.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5781E1EB95D4FF56A38453533566A21 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0C80E4EC08E4F15D3C9CD1B7FB37BED0 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D90D0CCE8DF5F710145A5B2573B7D1BF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E2384389E0703670678073E01428C2A /* Foundation.framework in Frameworks */,
-				85E16E2181A03BFE2CA5BA85EE7EBB65 /* jkool_client_objc_api.framework in Frameworks */,
-				821AE688F21717C5679ADA5ED942C5CA /* SocketRocket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,14 +275,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3DD2AC7E953FE8FB6723BA142F511E77 /* jkool-client-objc-tracking */ = {
-			isa = PBXGroup;
-			children = (
-				E9DE4B0135EA012CB89C3BE0E3A7C632 /* Classes */,
-			);
-			path = "jkool-client-objc-tracking";
-			sourceTree = "<group>";
-		};
 		550FD45D46FFD63C566299421CA4C13D /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +282,14 @@
 				5D557D00BA09999DBE4AA34573F94769 /* Pods-jkool-client-objc-tracking_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5943F7C6D723715A3D8EB493F44B1CFA /* jkool-client-objc-tracking */ = {
+			isa = PBXGroup;
+			children = (
+				961368FC89F90C5654607C1DAE2AD5FE /* Classes */,
+			);
+			path = "jkool-client-objc-tracking";
 			sourceTree = "<group>";
 		};
 		5D557D00BA09999DBE4AA34573F94769 /* Pods-jkool-client-objc-tracking_Tests */ = {
@@ -404,6 +404,21 @@
 			);
 			sourceTree = "<group>";
 		};
+		961368FC89F90C5654607C1DAE2AD5FE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				77C93B56B3350A525B3796D797DB86DC /* jKoolApplicationDelegate.h */,
+				777A6A556BCF5BE6092556E156D558DF /* jKoolApplicationDelegate.m */,
+				A3D1E4F955619BDF36CDDFCC98B6C99F /* jKoolCurrentViewController.h */,
+				E9C4ED09E710B2C10C301CC6442F345C /* jKoolCurrentViewController.m */,
+				0056CC9DB31D77866FE7852854A7749A /* UIApplication+UIApplication_jk.h */,
+				4B96CF3714A308FF9BD1B9E052145C24 /* UIApplication+UIApplication_jk.m */,
+				8DFD25CE84951F3CA0B27EB49120FE93 /* UIViewController+UIViewController_jk.h */,
+				6B7D93159CD2FD13832FC97BF70D4DAC /* UIViewController+UIViewController_jk.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		A16D252A53F249977C4EFDB9C571E773 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,7 +443,7 @@
 		C3912C494A298AC4A1C4C4256413BE5D /* jkool-client-objc-tracking */ = {
 			isa = PBXGroup;
 			children = (
-				3DD2AC7E953FE8FB6723BA142F511E77 /* jkool-client-objc-tracking */,
+				5943F7C6D723715A3D8EB493F44B1CFA /* jkool-client-objc-tracking */,
 				F1EA1388DB1FE8D1AF7E8ADFE77DBC85 /* Support Files */,
 			);
 			name = "jkool-client-objc-tracking";
@@ -470,21 +485,6 @@
 			path = SocketRocket;
 			sourceTree = "<group>";
 		};
-		E9DE4B0135EA012CB89C3BE0E3A7C632 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				BF994168908BDDE5EF36F062284AB1DE /* jKoolCurrentViewController.h */,
-				E525D8EAB851B8874089ECB1E4785E37 /* jKoolCurrentViewController.m */,
-				8234488C3ECFF5795A1AB12F3AA99769 /* UIApplication+UIApplication_jk.h */,
-				E4804BAE3D33462CE4E01797C0D51A7E /* UIApplication+UIApplication_jk.m */,
-				BE85F412C402EE2E6B957934B54CDD7B /* UIViewController+UIViewController_jk.h */,
-				497D4D5AD99F1E664DA5BDCDC3AB9F3F /* UIViewController+UIViewController_jk.m */,
-				4A61959A1D91D361006E8554 /* jKoolApplicationDelegate.h */,
-				4A61959B1D91D361006E8554 /* jKoolApplicationDelegate.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		F1EA1388DB1FE8D1AF7E8ADFE77DBC85 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,17 +502,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		19882BD0D0E3DAAE88744E93426ABB7E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B3D8881B14BF51D91FED37B84C4FEBE1 /* jkool-client-objc-tracking-umbrella.h in Headers */,
-				F9F4C3F4B54950F83C1FBF81FEAD4919 /* jKoolCurrentViewController.h in Headers */,
-				F7F3CD96FB1E8F5DCD94DC6425291D23 /* UIApplication+UIApplication_jk.h in Headers */,
-				1F497A16D9FAA6FD31C3891C29E87510 /* UIViewController+UIViewController_jk.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1D3919DF5DF567DB2070FB907FD0C580 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -548,10 +537,21 @@
 				A95BC9DE5D8E93A586424C572076D330 /* jKoolWebsocketCallbackHandler.h in Headers */,
 				08EFC14ADF4AED85D75F4EDEE455B347 /* jKoolWebsocketClient.h in Headers */,
 				8B09456F1A8D0F95CFBD8864EB39B8CD /* jkProperty.h in Headers */,
-				4A61959C1D91D361006E8554 /* jKoolApplicationDelegate.h in Headers */,
 				EB7A72266544ACBDCED8E8C91C234EC2 /* jkSnapshot.h in Headers */,
 				03CE8277379D4345FAA9FA73A697226C /* jkTrackable.h in Headers */,
 				78DCE059950B6CE5031A8EF2B135D780 /* JsonParser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78953071108B511A5B4DE6267A342B8B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AD037E88AC974F5294F09B1C6B1D5AF /* jkool-client-objc-tracking-umbrella.h in Headers */,
+				A19B4C35922766AA5F82CB801D3916FC /* jKoolApplicationDelegate.h in Headers */,
+				34F17BE643E77EC544387EE549328A7A /* jKoolCurrentViewController.h in Headers */,
+				9D70F24B4FA044ECF2102DEE8B43ACD0 /* UIApplication+UIApplication_jk.h in Headers */,
+				469AC107FD34A040999030C100F73A8A /* UIViewController+UIViewController_jk.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +602,25 @@
 			productReference = 736ABB5E771FA0A4984C82DE0E8D6C95 /* Pods_jkool_client_objc_tracking_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		69743630B87D3571700AE37DD840792D /* jkool-client-objc-tracking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F8EF5EAE0F4FF1F34CF8040B35E7362 /* Build configuration list for PBXNativeTarget "jkool-client-objc-tracking" */;
+			buildPhases = (
+				529AD3ED1AE2C760F61DF9B54D7CB17F /* Sources */,
+				A2F6492487A8EF20B9C6F0C15C096362 /* Frameworks */,
+				78953071108B511A5B4DE6267A342B8B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D1332C1C9CBEE8B76787296E7E1BB407 /* PBXTargetDependency */,
+				5D3FFD4A7F3A450F6EAB83F9EED1A0BF /* PBXTargetDependency */,
+			);
+			name = "jkool-client-objc-tracking";
+			productName = "jkool-client-objc-tracking";
+			productReference = C93255806DCD3BD505C15E3FA6D2E55C /* jkool_client_objc_tracking.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		81DD2AD60231720514DC036078E7AB7B /* Pods-jkool-client-objc-tracking_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD30E5AEA5D66700E13CE3DB925987A8 /* Build configuration list for PBXNativeTarget "Pods-jkool-client-objc-tracking_Example" */;
@@ -640,25 +659,6 @@
 			productReference = 883D593B60F82914230FAB32199B5676 /* jkool_client_objc_api.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D5E01C9EB1533434DB5FF5796480457E /* jkool-client-objc-tracking */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DA556E67773080405F8B10133C4EFA75 /* Build configuration list for PBXNativeTarget "jkool-client-objc-tracking" */;
-			buildPhases = (
-				35E49C44AB2EB1CD8F5FDFF0619E7A5A /* Sources */,
-				D90D0CCE8DF5F710145A5B2573B7D1BF /* Frameworks */,
-				19882BD0D0E3DAAE88744E93426ABB7E /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				94D2F48570F0F5058DAA1FB2FB8F6AB3 /* PBXTargetDependency */,
-				7DC2FF404EAAADF3AF9356565F9C9380 /* PBXTargetDependency */,
-			);
-			name = "jkool-client-objc-tracking";
-			productName = "jkool-client-objc-tracking";
-			productReference = C93255806DCD3BD505C15E3FA6D2E55C /* jkool_client_objc_tracking.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -681,7 +681,7 @@
 			projectRoot = "";
 			targets = (
 				C11AC7446A5AB3AFA1A22D14159A5E06 /* jkool-client-objc-api */,
-				D5E01C9EB1533434DB5FF5796480457E /* jkool-client-objc-tracking */,
+				69743630B87D3571700AE37DD840792D /* jkool-client-objc-tracking */,
 				81DD2AD60231720514DC036078E7AB7B /* Pods-jkool-client-objc-tracking_Example */,
 				3B9EBB7B2BBC62A37C499D3001CD7A44 /* Pods-jkool-client-objc-tracking_Tests */,
 				0CA5414FD215ADE5B2447F299C524763 /* SocketRocket */,
@@ -702,7 +702,6 @@
 				B12130A2FB621A8942A5E30CC9ADBBBA /* jKoolAppDelegate.m in Sources */,
 				C23C490B2C783E07434FCCE295E229E8 /* jKoolApplication.m in Sources */,
 				53463A995AC71BD565968195FC343183 /* jKoolCallbackHandler.m in Sources */,
-				4A61959D1D91D361006E8554 /* jKoolApplicationDelegate.m in Sources */,
 				A0B7CDA4074641470CAC5051C3073A78 /* jKoolQuerying.m in Sources */,
 				3E309CBA6017AC03D2FE0B664472DC11 /* jKoolService.m in Sources */,
 				DA677C9BC5B67A00EB877AC17EAD2A1D /* jKoolStreamDeviceInfo.m in Sources */,
@@ -716,22 +715,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		35E49C44AB2EB1CD8F5FDFF0619E7A5A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C1582F126F2E258894BEA9517AA16682 /* jkool-client-objc-tracking-dummy.m in Sources */,
-				AB592430735BF2621E06A39E51E6359F /* jKoolCurrentViewController.m in Sources */,
-				BB97B587B42082CADEAFE46CAB44A3F3 /* UIApplication+UIApplication_jk.m in Sources */,
-				87EC1B9A42E8A64DAC9E1CE9396E2902 /* UIViewController+UIViewController_jk.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		38A4B25B89C8A70E1454974A272B95DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ABB1C6FEB2DFDD23D8422FE0D9026272 /* Pods-jkool-client-objc-tracking_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		529AD3ED1AE2C760F61DF9B54D7CB17F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4FCA5E2909B4440ACDD62AABA1D791F /* jkool-client-objc-tracking-dummy.m in Sources */,
+				4FB22C50BA4901B036E7623884A8FF03 /* jKoolApplicationDelegate.m in Sources */,
+				88BD398B26254ED63BE6970FFB84AEDE /* jKoolCurrentViewController.m in Sources */,
+				425856F927ED18FE4E60A1A03757C925 /* UIApplication+UIApplication_jk.m in Sources */,
+				9C61BA9E05DC5A9A73036EB85263D6CA /* UIViewController+UIViewController_jk.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,28 +767,28 @@
 			target = C11AC7446A5AB3AFA1A22D14159A5E06 /* jkool-client-objc-api */;
 			targetProxy = 7404C2B5CC9B3D97F37C8EC2B832DEE5 /* PBXContainerItemProxy */;
 		};
+		5D3FFD4A7F3A450F6EAB83F9EED1A0BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "jkool-client-objc-api";
+			target = C11AC7446A5AB3AFA1A22D14159A5E06 /* jkool-client-objc-api */;
+			targetProxy = 03F5366C404F6040B360C09861BC169C /* PBXContainerItemProxy */;
+		};
 		5EB52FCE6D2D89BF245E7BC8F270F70E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SocketRocket;
 			target = 0CA5414FD215ADE5B2447F299C524763 /* SocketRocket */;
 			targetProxy = 5A52129217DEEF423B98AF99F3CB8355 /* PBXContainerItemProxy */;
 		};
-		7DC2FF404EAAADF3AF9356565F9C9380 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "jkool-client-objc-api";
-			target = C11AC7446A5AB3AFA1A22D14159A5E06 /* jkool-client-objc-api */;
-			targetProxy = 804D9D60DFBFD067CD0CB5F7C839F59C /* PBXContainerItemProxy */;
-		};
-		94D2F48570F0F5058DAA1FB2FB8F6AB3 /* PBXTargetDependency */ = {
+		D1332C1C9CBEE8B76787296E7E1BB407 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SocketRocket;
 			target = 0CA5414FD215ADE5B2447F299C524763 /* SocketRocket */;
-			targetProxy = 7122BBE268AFE51AC3A4765C53D9BEE5 /* PBXContainerItemProxy */;
+			targetProxy = F72D2D5285D8E84E1E8CA92B7CF3B852 /* PBXContainerItemProxy */;
 		};
 		DF7D7A28F4E66A4A710A7E0B50744ECE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "jkool-client-objc-tracking";
-			target = D5E01C9EB1533434DB5FF5796480457E /* jkool-client-objc-tracking */;
+			target = 69743630B87D3571700AE37DD840792D /* jkool-client-objc-tracking */;
 			targetProxy = A2166043B7A763F72C48843AD863EA89 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -927,7 +927,7 @@
 			};
 			name = Debug;
 		};
-		6CEB70180FA05029C9A71B7AA5D50467 /* Debug */ = {
+		7FCC915FA8B9B901EDCED8747203238A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6FBEB1E19EA20E77B85538EAA32211C0 /* jkool-client-objc-tracking.xcconfig */;
 			buildSettings = {
@@ -984,35 +984,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		9EF8CC20F48A9CE51E01AA3F88A6D494 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FBEB1E19EA20E77B85538EAA32211C0 /* jkool-client-objc-tracking.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/jkool-client-objc-tracking/jkool-client-objc-tracking-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/jkool-client-objc-tracking/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/jkool-client-objc-tracking/jkool-client-objc-tracking.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = jkool_client_objc_tracking;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		B88B7C6D35860BEE87DB3475B8686D01 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1118,6 +1089,35 @@
 			};
 			name = Debug;
 		};
+		E5821AB98A1F25D7BD7800A4F2F497AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FBEB1E19EA20E77B85538EAA32211C0 /* jkool-client-objc-tracking.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/jkool-client-objc-tracking/jkool-client-objc-tracking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/jkool-client-objc-tracking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/jkool-client-objc-tracking/jkool-client-objc-tracking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = jkool_client_objc_tracking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		E81DC332F81618DC3BB20BDC2DFA57D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FEC6D7E22050A3767B140DF4774F507B /* SocketRocket.xcconfig */;
@@ -1210,6 +1210,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		6F8EF5EAE0F4FF1F34CF8040B35E7362 /* Build configuration list for PBXNativeTarget "jkool-client-objc-tracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FCC915FA8B9B901EDCED8747203238A /* Debug */,
+				E5821AB98A1F25D7BD7800A4F2F497AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A51C87234D284EE4EEA73D53D1A3B256 /* Build configuration list for PBXNativeTarget "Pods-jkool-client-objc-tracking_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1224,15 +1233,6 @@
 			buildConfigurations = (
 				6B62C874D07154A02E49FBA64B20D51B /* Debug */,
 				F80A10F8556EB1D8AAE86A2DAB5051D7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DA556E67773080405F8B10133C4EFA75 /* Build configuration list for PBXNativeTarget "jkool-client-objc-tracking" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6CEB70180FA05029C9A71B7AA5D50467 /* Debug */,
-				9EF8CC20F48A9CE51E01AA3F88A6D494 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

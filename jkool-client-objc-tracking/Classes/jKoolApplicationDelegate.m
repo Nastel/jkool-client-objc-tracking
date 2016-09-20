@@ -20,79 +20,52 @@
 
 @implementation jKoolApplicationDelegate
 
-jkLocation *location;
-jKoolStreaming *jkStreaming;
+jkLocation *jkkLocation;
+jKoolStreaming *jkkStreaming;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Kick-off locationing
-    location = [[jkLocation alloc] init];
-    [location kickOffLocationing];
-    // Create and store activity so we can stream it later
-    [[jKoolCurrentViewController sharedManager] setActivity:[self createActivity]];
-    return YES;
-}
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-   
-    
-}
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
++ (void)streamjKoolActivity
 {
-    jkStreaming = [[jKoolStreaming alloc] init];
+    jkkStreaming = [[jKoolStreaming alloc] init];
     jkActivity *activity = [[jKoolCurrentViewController sharedManager] activity];
-    [jkStreaming stream:activity forUrl:@"activity"] ;
+    [jkkStreaming stream:activity forUrl:@"activity"] ;
 
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
+
+
++ (void)createjKoolActivity
 {
     // Kick-off locationing
-    location = [[jkLocation alloc] init];
-    [location kickOffLocationing];
-    // Create and store activity so we can stream it later
-    [[jKoolCurrentViewController sharedManager] setActivity:[self createActivity]];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-
-}
-
-- (jkActivity *)createActivity
-{
+    jkkLocation = [[jkLocation alloc] init];
+    [jkkLocation kickOffLocationing];
     jkActivity *activity = [[jkActivity alloc] initWithName:@"Tracking Activity"];
     NSMutableArray * properties = [[NSMutableArray alloc] init];
     [activity setJkstatus:JK_END];
     [activity setReasonCode:9];
     [activity setException:@"my exception"];
     [activity setUser:@"Cathy"];
-    [activity setGeoAddr:[location getCoordinates]];
+    [activity setGeoAddr:[jkkLocation getCoordinates]];
     [activity setResource:@"my resource"];
-    jkProperty * propiOSVersion = [[jkProperty alloc] initWithName:@"iOSVersion" andType:@"string" andValue:[[UIDevice currentDevice] systemVersion]];
-    jkProperty * propModel = [[jkProperty alloc] initWithName:@"model" andType:@"string" andValue:[[UIDevice currentDevice] model]];
-    jkProperty * propVersion = [[jkProperty alloc] initWithName:@"version" andType:@"string" andValue:[self platformRawString]];
+    //jkProperty * propiOSVersion = [[jkProperty alloc] initWithName:@"iOSVersion" andType:@"NSString" andValue:[[UIDevice currentDevice] systemVersion]];
+    //jkProperty * propModel = [[jkProperty alloc] initWithName:@"model" andType:@"NSString" andValue:[[UIDevice currentDevice] model]];
+    //jkProperty * propVersion = [[jkProperty alloc] initWithName:@"version" andType:@"NSString" andValue:[self platformRawString]];
     CTTelephonyNetworkInfo *phoneInfo = [[CTTelephonyNetworkInfo alloc] init];
-    jkProperty * propPhoneCarrier = [[jkProperty alloc] initWithName:@"phonearrier" andType:@"string" andValue: [[phoneInfo subscriberCellularProvider] carrierName]];
-    jkProperty * propFreeMemory = [[jkProperty alloc] initWithName:@"freeMemory" andType:@"int" andValue:[NSString stringWithFormat:@"%ld",(long)get_free_memory]];
-    properties = [[NSMutableArray alloc] init];
-    [properties addObject:propiOSVersion];
-    [properties addObject:propVersion];
-    [properties addObject:propModel];
-    [properties addObject:propPhoneCarrier];
-    [properties addObject:propFreeMemory];
-    [activity setProperties:properties];
-    return activity;
+    jkProperty * propPhoneCarrier = [[jkProperty alloc] initWithName:@"phonearrier" andType:@"NSString" andValue: [[phoneInfo subscriberCellularProvider] carrierName]];
+    //jkProperty * propFreeMemory = [[jkProperty alloc] initWithName:@"freeMemory" andType:@"NSNumber" andValue:[NSString stringWithFormat:@"%ld",(long)get_free_memory]];
+    //properties = [[NSMutableArray alloc] init];
+    //[properties addObject:propiOSVersion];
+    //[properties addObject:propVersion];
+    //[properties addObject:propModel];
+    //[properties addObject:propPhoneCarrier];
+    //[properties addObject:propFreeMemory];
+    //[activity setProperties:properties];
+    // Store activity so we can stream it later
+    [[jKoolCurrentViewController sharedManager] setActivity:activity];
 }
 
-- (NSString *)platformRawString {
++ (NSString *)platformRawString {
     size_t size;
     sysctlbyname("hw.machine", NULL, &size, NULL, 0);
     char *machine = malloc(size);
@@ -101,7 +74,7 @@ jKoolStreaming *jkStreaming;
     free(machine);
     return platform;
 }
-- (NSString *)platformNiceString {
++ (NSString *)platformNiceString {
     NSString *platform = [self platformRawString];
     if ([platform isEqualToString:@"iPhone1,1"])    return @"iPhone 1G";
     if ([platform isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
