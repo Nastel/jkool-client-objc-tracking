@@ -55,7 +55,7 @@ jkLocation *location;
     [jkStreaming setToken:[sharedManager token]];
     [jkStreaming initializeStream:[sharedManager vc]];
     jKoolEvent = [[jkEvent alloc] initWithName:selectorName];
-    [jKoolEvent setMsgText:@"hello world"] ;
+    [jKoolEvent setMsgText:[NSString stringWithFormat:@"%@", [sharedManager vc]]] ;
     [jKoolEvent setUser:@"Cathy"];
     [jKoolEvent setGeoAddr:[location getCoordinates]];
     [jKoolEvent setResource:@"my resource"];

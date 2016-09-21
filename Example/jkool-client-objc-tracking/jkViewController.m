@@ -7,7 +7,6 @@
 //
 
 #import "jkViewController.h"
-//#import "jKoolCurrentViewController.h"
 
 @interface jkViewController ()
 
@@ -18,8 +17,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//	jKoolCurrentViewController *sharedManager = [jKoolCurrentViewController sharedManager];
-//    [sharedManager setToken:@"HdC0YR5u58UTNyPByFe7GXuHgLFtFx28"];
 }
 
 - (void)didReceiveMemoryWarning
