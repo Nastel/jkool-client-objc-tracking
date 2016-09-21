@@ -29,7 +29,7 @@
 @implementation UIApplication (UIApplication_jk)
 jkEvent *jKoolEvent;
 jKoolStreaming *jkStreaming;
-jkLocation *location;
+//static jkLocation *location;
 
 + (void)load {
     Class class = [self class];
@@ -41,8 +41,8 @@ jkLocation *location;
     method_exchangeImplementations(originalMethod, replacementMethod);
     
     // Kick-off locationing
-    location = [[jkLocation alloc] init];
-    [location kickOffLocationing];
+    //location = [[jkLocation alloc] init];
+    //[location kickOffLocationing];
 }
 
 - (BOOL)heap_sendAction:(SEL)action to:(id)target from:(id)sender forEvent:(UIEvent *)event {
@@ -57,7 +57,7 @@ jkLocation *location;
     jKoolEvent = [[jkEvent alloc] initWithName:selectorName];
     [jKoolEvent setMsgText:[NSString stringWithFormat:@"%@", [sharedManager vc]]] ;
     [jKoolEvent setUser:@"Cathy"];
-    [jKoolEvent setGeoAddr:[location getCoordinates]];
+    [jKoolEvent setGeoAddr:[[sharedManager location] getCoordinates]];
     [jKoolEvent setResource:@"my resource"];
     [jKoolEvent setParentTrackId:[[sharedManager activity] trackingId]];
     [jkStreaming stream:jKoolEvent forUrl:@"event"];

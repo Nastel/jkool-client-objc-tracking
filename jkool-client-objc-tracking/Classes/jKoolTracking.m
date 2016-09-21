@@ -20,7 +20,7 @@
 
 @implementation jKoolTracking
 
-jkLocation *jkkLocation;
+//jkLocation *jkkLocation;
 jKoolStreaming *jkkStreaming;
 UIBackgroundTaskIdentifier *backgroundUpdateTask;
 
@@ -28,6 +28,8 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
 {
     jKoolData *sharedManager = [jKoolData sharedManager];
     [sharedManager setToken:token];
+    [sharedManager setLocation:[[jkLocation alloc] init]];
+    [[sharedManager location] kickOffLocationing];
     [self createjKoolActivity];
 }
 
@@ -47,15 +49,17 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
 + (void)createjKoolActivity
 {
     // Kick-off locationing
-    jkkLocation = [[jkLocation alloc] init];
-    [jkkLocation kickOffLocationing];
+    //jkkLocation = [[jkLocation alloc] init];
+    //[jkkLocation kickOffLocationing];
     jkActivity *activity = [[jkActivity alloc] initWithName:@"Tracking Activity"];
     NSMutableArray * properties = [[NSMutableArray alloc] init];
     [activity setJkstatus:JK_END];
     [activity setReasonCode:9];
     [activity setException:@"my exception"];
     [activity setUser:@"Cathy"];
-    [activity setGeoAddr:[jkkLocation getCoordinates]];
+    
+     jKoolData *sharedManager = [jKoolData sharedManager];
+    [activity setGeoAddr:[[sharedManager location] getCoordinates]];
     [activity setResource:@"my resource"];
     jkProperty * propiOSVersion = [[jkProperty alloc] initWithName:@"iOSVersion" andType:@"NSString" andValue:[[UIDevice currentDevice] systemVersion]];
     jkProperty * propModel = [[jkProperty alloc] initWithName:@"model" andType:@"NSString" andValue:[[UIDevice currentDevice] model]];

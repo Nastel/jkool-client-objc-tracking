@@ -9,16 +9,19 @@
 
 #import <foundation/Foundation.h>
 #import "jkActivity.h"
+#import "jkLocation.h"
 
 @interface jKoolData : NSObject {
     NSString *token;
     UIViewController *vc;
     jkActivity *activity;
+    jkLocation *location;
 }
 
 @property (nonatomic, retain) NSString *token;
 @property (nonatomic, retain) UIViewController *vc;
 @property (nonatomic, retain) jkActivity *activity;
+@property (nonatomic, retain) jkLocation *location;
 
 + (id)sharedManager;
 
