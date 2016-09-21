@@ -22,15 +22,17 @@
 
 jkLocation *jkkLocation;
 jKoolStreaming *jkkStreaming;
-
-
+UIBackgroundTaskIdentifier *backgroundUpdateTask;
 
 + (void)streamjKoolActivity
 {
+    [self beginBackgroundUpdateTask];
     jkkStreaming = [[jKoolStreaming alloc] init];
+    [jkkStreaming setToken:[[jKoolCurrentViewController sharedManager]  token]];
+    [jkkStreaming initializeStream:[[jKoolCurrentViewController sharedManager] vc]];
     jkActivity *activity = [[jKoolCurrentViewController sharedManager] activity];
     [jkkStreaming stream:activity forUrl:@"activity"] ;
-
+    [self endBackgroundUpdateTask];
 }
 
 
@@ -99,6 +101,21 @@ jKoolStreaming *jkkStreaming;
     return platform;
 }
 
+
+
++ (void) endBackgroundUpdateTask
+{
+    [[UIApplication sharedApplication] endBackgroundTask: backgroundUpdateTask];
+    backgroundUpdateTask = UIBackgroundTaskInvalid;
+}
+
++ (void) beginBackgroundUpdateTask
+{
+    backgroundUpdateTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        [self endBackgroundUpdateTask];
+    }];
+}
+
 static natural_t get_free_memory(void)
 {
     mach_port_t host_port;
@@ -116,5 +133,7 @@ static natural_t get_free_memory(void)
     natural_t mem_free = vm_stat.free_count * pagesize;
     return mem_free;
 }
+
+
 
 @end

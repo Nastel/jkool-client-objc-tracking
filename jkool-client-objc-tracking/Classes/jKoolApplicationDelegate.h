@@ -13,5 +13,7 @@
 + (void)createjKoolActivity;
 + (NSString *)platformNiceString;
 + (NSString *)platformRawString;
++ (void) beginBackgroundUpdateTask;
++ (void) endBackgroundUpdateTask;
 
 @end
