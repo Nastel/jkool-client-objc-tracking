@@ -8,11 +8,14 @@
 
 #import "jkAppDelegate.h"
 #import "jKoolApplicationDelegate.h"
+#import "jKoolCurrentViewController.h"
 
 @implementation jkAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    jKoolCurrentViewController *sharedManager = [jKoolCurrentViewController sharedManager];
+    [sharedManager setToken:@"HdC0YR5u58UTNyPByFe7GXuHgLFtFx28"];
     [jKoolApplicationDelegate createjKoolActivity];
     return YES;
 }
