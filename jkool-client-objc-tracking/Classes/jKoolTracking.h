@@ -7,7 +7,7 @@
 //
 
 
-@interface jKoolApplicationDelegate : NSObject
+@interface jKoolTracking : NSObject
 
 + (void)streamjKoolActivity;
 + (void)createjKoolActivity;
@@ -15,5 +15,6 @@
 + (NSString *)platformRawString;
 + (void) beginBackgroundUpdateTask;
 + (void) endBackgroundUpdateTask;
++ (void) initializeTracking : (NSString *) token;
 
 @end

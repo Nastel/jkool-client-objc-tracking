@@ -6,31 +6,38 @@
 //
 //
 
-#import "jKoolApplicationDelegate.h"
+#import "jKoolTracking.h"
 #import "jkActivity.h"
 #import "jkProperty.h"
 #import "jkLocation.h"
 #import "jKoolStreaming.h"
-#import "jKoolCurrentViewController.h"
+#import "jKoolData.h"
 #import <mach/mach.h>
 #import <mach/mach_host.h>
 #import <sys/sysctl.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
 
-@implementation jKoolApplicationDelegate
+@implementation jKoolTracking
 
 jkLocation *jkkLocation;
 jKoolStreaming *jkkStreaming;
 UIBackgroundTaskIdentifier *backgroundUpdateTask;
 
++ (void) initializeTracking : (NSString *) token
+{
+    jKoolData *sharedManager = [jKoolData sharedManager];
+    [sharedManager setToken:token];
+    [self createjKoolActivity];
+}
+
 + (void)streamjKoolActivity
 {
     [self beginBackgroundUpdateTask];
     jkkStreaming = [[jKoolStreaming alloc] init];
-    [jkkStreaming setToken:[[jKoolCurrentViewController sharedManager]  token]];
-    [jkkStreaming initializeStream:[[jKoolCurrentViewController sharedManager] vc]];
-    jkActivity *activity = [[jKoolCurrentViewController sharedManager] activity];
+    [jkkStreaming setToken:[[jKoolData sharedManager]  token]];
+    [jkkStreaming initializeStream:[[jKoolData sharedManager] vc]];
+    jkActivity *activity = [[jKoolData sharedManager] activity];
     [jkkStreaming stream:activity forUrl:@"activity"] ;
     [self endBackgroundUpdateTask];
 }
@@ -64,7 +71,7 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     [properties addObject:propFreeMemory];
     [activity setProperties:properties];
     // Store activity so we can stream it later
-    [[jKoolCurrentViewController sharedManager] setActivity:activity];
+    [[jKoolData sharedManager] setActivity:activity];
 }
 
 + (NSString *)platformRawString {

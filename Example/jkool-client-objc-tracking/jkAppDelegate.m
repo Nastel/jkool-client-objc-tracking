@@ -7,49 +7,40 @@
 //
 
 #import "jkAppDelegate.h"
-#import "jKoolApplicationDelegate.h"
-#import "jKoolCurrentViewController.h"
+#import "jKoolTracking.h"
 
 @implementation jkAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    jKoolCurrentViewController *sharedManager = [jKoolCurrentViewController sharedManager];
-    [sharedManager setToken:@"HdC0YR5u58UTNyPByFe7GXuHgLFtFx28"];
-    [jKoolApplicationDelegate createjKoolActivity];
+    [jKoolTracking initializeTracking:@"HdC0YR5u58UTNyPByFe7GXuHgLFtFx28"];
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    
-    int i = 0;
-
-    
 
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-        [jKoolApplicationDelegate streamjKoolActivity];
+        [jKoolTracking streamjKoolActivity];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-        [jKoolApplicationDelegate createjKoolActivity];
+        [jKoolTracking createjKoolActivity];
     
 
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-        int i = 0;
 
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    int i = 0;
 }
 
 

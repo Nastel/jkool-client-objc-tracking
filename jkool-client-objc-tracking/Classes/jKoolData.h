@@ -10,7 +10,7 @@
 #import <foundation/Foundation.h>
 #import "jkActivity.h"
 
-@interface jKoolCurrentViewController : NSObject {
+@interface jKoolData : NSObject {
     NSString *token;
     UIViewController *vc;
     jkActivity *activity;

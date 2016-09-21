@@ -24,7 +24,7 @@
 #import "jKoolStreaming.h"
 #import "jkLocation.h"
 #import <UIKit/UIKit.h>
-#import "jKoolCurrentViewController.h"
+#import "jKoolData.h"
 
 @implementation UIApplication (UIApplication_jk)
 jkEvent *jKoolEvent;
@@ -47,7 +47,7 @@ jkLocation *location;
 
 - (BOOL)heap_sendAction:(SEL)action to:(id)target from:(id)sender forEvent:(UIEvent *)event {
     NSString *selectorName = NSStringFromSelector(action);
-    jKoolCurrentViewController *sharedManager = [jKoolCurrentViewController sharedManager];
+    jKoolData *sharedManager = [jKoolData sharedManager];
     printf("Selector %s occurred.\n", [selectorName UTF8String]);
     
     // Stream Event

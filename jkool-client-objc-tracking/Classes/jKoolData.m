@@ -1,6 +1,6 @@
-#import "jKoolCurrentViewController.h"
+#import "jKoolData.h"
 
-@implementation jKoolCurrentViewController
+@implementation jKoolData
 
 @synthesize vc;
 @synthesize token;
@@ -9,7 +9,7 @@
 #pragma mark Singleton Methods
 
 + (id)sharedManager {
-    static jKoolCurrentViewController *jk = nil;
+    static jKoolData *jk = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         jk = [[self alloc] init];

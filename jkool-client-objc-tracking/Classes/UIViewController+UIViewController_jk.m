@@ -19,7 +19,7 @@
 
 #import "UIViewController+UIViewController_jk.h"
 #import <objc/runtime.h>
-#import "jKoolCurrentViewController.h"
+#import "jKoolData.h"
 
 @implementation UIViewController (jk)
 + (void)load {
@@ -28,7 +28,7 @@
         Class class = [self class];
         
         SEL originalSelector = @selector(viewWillAppear:);
-        SEL swizzledSelector = @selector(xxx_viewWillAppear:);
+        SEL swizzledSelector = @selector(jk_viewWillAppear:);
         
         Method originalMethod = class_getInstanceMethod(class, originalSelector);
         Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
@@ -50,10 +50,10 @@
     });
 }
 
-- (void)xxx_viewWillAppear:(BOOL)animated {
-    [self xxx_viewWillAppear:animated];
+- (void)jk_viewWillAppear:(BOOL)animated {
+    [self jk_viewWillAppear:animated];
     NSLog(@"viewWillAppear: %@", self);
-    jKoolCurrentViewController *sharedManager = [jKoolCurrentViewController sharedManager];
+    jKoolData *sharedManager = [jKoolData sharedManager];
     [sharedManager setVc:self];
 }
 @end
