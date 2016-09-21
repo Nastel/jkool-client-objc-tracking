@@ -22,6 +22,8 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
+    
+    int i = 0;
 
     
 
@@ -41,12 +43,13 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+        int i = 0;
 
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-
+    int i = 0;
 }
 
 

@@ -54,12 +54,13 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     jkProperty * propModel = [[jkProperty alloc] initWithName:@"model" andType:@"NSString" andValue:[[UIDevice currentDevice] model]];
     jkProperty * propVersion = [[jkProperty alloc] initWithName:@"version" andType:@"NSString" andValue:[self platformRawString]];
     CTTelephonyNetworkInfo *phoneInfo = [[CTTelephonyNetworkInfo alloc] init];
-    //jkProperty * propPhoneCarrier = [[jkProperty alloc] initWithName:@"phonecarrier" andType:@"NSString" andValue: [[phoneInfo subscriberCellularProvider] carrierName]];
+    NSString *phoneCarrier = [[phoneInfo subscriberCellularProvider] carrierName];
+    jkProperty * propPhoneCarrier = [[jkProperty alloc] initWithName:@"phoneCarrier" andType:@"NSString" andValue: (phoneCarrier != nil) ? phoneCarrier : @"N/A"];
     jkProperty * propFreeMemory = [[jkProperty alloc] initWithName:@"freeMemory" andType:@"NSNumber" andValue:[NSString stringWithFormat:@"%ld",(long)get_free_memory]];
     [properties addObject:propiOSVersion];
     [properties addObject:propVersion];
     [properties addObject:propModel];
-    //[properties addObject:propPhoneCarrier];
+    [properties addObject:propPhoneCarrier];
     [properties addObject:propFreeMemory];
     [activity setProperties:properties];
     // Store activity so we can stream it later
