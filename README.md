@@ -1,29 +1,66 @@
-# jkool-client-objc-tracking
+# jKool Tracking API for iOS
 
-[![CI Status](http://img.shields.io/travis/jKool developer/jkool-client-objc-tracking.svg?style=flat)](https://travis-ci.org/jKool developer/jkool-client-objc-tracking)
-[![Version](https://img.shields.io/cocoapods/v/jkool-client-objc-tracking.svg?style=flat)](http://cocoapods.org/pods/jkool-client-objc-tracking)
-[![License](https://img.shields.io/cocoapods/l/jkool-client-objc-tracking.svg?style=flat)](http://cocoapods.org/pods/jkool-client-objc-tracking)
-[![Platform](https://img.shields.io/cocoapods/p/jkool-client-objc-tracking.svg?style=flat)](http://cocoapods.org/pods/jkool-client-objc-tracking)
+Welcome to the jKool Tracking Cocoa Pod. By importing this pod into your app and adding just a few lines of code to your AppDelegate, your users experience with you app will be automatically streamed to jKool. With a jKool subscription, which you can get for free by going to this link ...., you can then view the data about your users experience with you app. The jKool User Interface makes viewing your users data very visual and easy to understand due to it's graphical representations of your data. Also, using jKools Query Language (JKQL), you can use English-like queries to query and analyze your data in a manner that is customized to your liking. This pod will stream user clicks and the screens they visited as 'Events'. It will stream data about the users entire session with the app as 'Activities'. Please read more about how the data is structured below.
+
+This pod also makes use of the jKool Client API Cocoa Pod. the jKool Client API Cocoa Pod allows you to stream, query, and subscribe to jKool data. Using this API, you can stream your own custom data into jKool. So by importing the Tracking Cocoa Pod, you will also have access to the Client API Cocoa Pod which you can learn more about here ... 
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
-
-## Installation
-
-jkool-client-objc-tracking is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "jkool-client-objc-tracking"
-```
-
 ## Author
 
-jKool developer, support@jkoolcloud.com
+jKool LLC
 
 ## License
 
-jkool-client-objc-tracking is available under the MIT license. See the LICENSE file for more info.
+Please refer to the LICENSE file.
+
+##To get started:
+
+Include this Api by putting the following in your PodFile:
+```ruby
+pod 'jkool-client-objc-tracking'
+```
+
+## Info.plist 
+To use this Api, some enhancements will need to be made to your app's info.plist.
+If you wish to know the location of the device for each event, add the following to your app's 'Required device capabilities':
+```objective-c
+location-services
+gps
+```
+
+## Add to AppDelegate
+To get the Tracking working, please add the following to your AppDelegate. Please note that your 'token' you wil get when your register for jKool.
+
+To applicationDidBecomeActive and applicationWillEnterForeground add:
+```objective-c
+ [jKoolTracking createjKoolActivity];
+```
+
+To applicationDidEnterBackground add:
+```objective-c
+[jKoolTracking streamjKoolActivity];
+```
+
+To didFinishLaunchingWithOptions add:
+```objective-c
+[jKoolTracking initializeTracking:@"your-token"];
+```
+
+## Seeing results
+
+There is an Example app in this pod. It contains a complete working app with all of the above mentioned code in it. Simply replace your access token where “your-token” is specified in order to see the app working. We recommend you do the following:
+
+Run the App. 
+Click all three buttons. 
+Exit the App. Please note that it is important to exit. Your data will not get into your jKool repository until your app is exited or pushed to the background. 
+View the streamed data in jKool by logging into your jKool repository.  Simply do "get events fields all" to see the three clicked events and do "get activites fields all" to see the streamed activity. 
+
+##Support
+
+If you have any questions or concerns, please reach out to us by emailing support@jkoolcloud.com. We will get back to you as quickly as possible.
+
+
+
