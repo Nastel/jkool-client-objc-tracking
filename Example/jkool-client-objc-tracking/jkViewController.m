@@ -37,11 +37,6 @@
     
 }
 
-// If using this ViewController as the handler.
-- (void) handlejKoolResponse:(NSData *) data  {
-    NSString * str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"Streaming Callback: %@",str);
 
-}
 
 @end

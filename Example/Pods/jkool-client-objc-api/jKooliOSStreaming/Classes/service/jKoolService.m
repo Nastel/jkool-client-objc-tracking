@@ -34,7 +34,8 @@ didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSe
 {
     NSString * str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"Received String %@",str);
-    [sendResponse handlejKoolResponse:data];
+    if (sendResponse != nil)
+        [sendResponse handlejKoolResponse:data];
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error

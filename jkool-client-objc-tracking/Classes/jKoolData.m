@@ -7,6 +7,7 @@
 @synthesize token;
 @synthesize activity;
 @synthesize location;
+@synthesize jkStreaming;
 
 #pragma mark Singleton Methods
 
@@ -15,7 +16,6 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         jk = [[self alloc] init];
-        // Kick-off locationing
     });
     return jk;
 }
@@ -28,7 +28,6 @@
 }
 
 - (void)dealloc {
-    // Should never be called, but just here for clarity really.
 }
 
 @end

@@ -36,7 +36,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-
+    [jKoolTracking createjKoolActivity];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

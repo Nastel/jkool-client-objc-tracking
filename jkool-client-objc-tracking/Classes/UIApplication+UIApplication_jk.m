@@ -27,9 +27,6 @@
 #import "jKoolData.h"
 
 @implementation UIApplication (UIApplication_jk)
-jkEvent *jKoolEvent;
-jKoolStreaming *jkStreaming;
-//static jkLocation *location;
 
 + (void)load {
     Class class = [self class];
@@ -39,10 +36,6 @@ jKoolStreaming *jkStreaming;
     Method originalMethod = class_getInstanceMethod(class, originalSelector);
     Method replacementMethod = class_getInstanceMethod(class, replacementSelector);
     method_exchangeImplementations(originalMethod, replacementMethod);
-    
-    // Kick-off locationing
-    //location = [[jkLocation alloc] init];
-    //[location kickOffLocationing];
 }
 
 - (BOOL)heap_sendAction:(SEL)action to:(id)target from:(id)sender forEvent:(UIEvent *)event {
@@ -51,10 +44,8 @@ jKoolStreaming *jkStreaming;
     printf("Selector %s occurred.\n", [selectorName UTF8String]);
     
     // Stream Event
-    jkStreaming = [[jKoolStreaming alloc] init];
-    [jkStreaming setToken:[sharedManager token]];
-    [jkStreaming initializeStream:[sharedManager vc]];
-    jKoolEvent = [[jkEvent alloc] initWithName:selectorName];
+    jKoolStreaming *jkStreaming = [sharedManager jkStreaming];
+    jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:selectorName];
     [jKoolEvent setMsgText:[NSString stringWithFormat:@"%@", [sharedManager vc]]] ;
     [jKoolEvent setUser:@"Cathy"];
     [jKoolEvent setGeoAddr:[[sharedManager location] getCoordinates]];

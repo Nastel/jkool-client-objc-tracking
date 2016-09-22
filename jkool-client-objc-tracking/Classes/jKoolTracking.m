@@ -20,8 +20,6 @@
 
 @implementation jKoolTracking
 
-//jkLocation *jkkLocation;
-jKoolStreaming *jkkStreaming;
 UIBackgroundTaskIdentifier *backgroundUpdateTask;
 
 + (void) initializeTracking : (NSString *) token
@@ -31,16 +29,19 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     [sharedManager setLocation:[[jkLocation alloc] init]];
     [[sharedManager location] kickOffLocationing];
     [self createjKoolActivity];
+    [sharedManager setJkStreaming:[[jKoolStreaming alloc] init]];
+    [[sharedManager jkStreaming] setToken:[sharedManager token]];
+    [[sharedManager jkStreaming] initializeStream:nil];
 }
 
 + (void)streamjKoolActivity
 {
     [self beginBackgroundUpdateTask];
-    jkkStreaming = [[jKoolStreaming alloc] init];
-    [jkkStreaming setToken:[[jKoolData sharedManager]  token]];
-    [jkkStreaming initializeStream:[[jKoolData sharedManager] vc]];
+    jKoolData *sharedManager = [jKoolData sharedManager];
+    [[sharedManager jkStreaming] setToken:[[jKoolData sharedManager]  token]];
+    [[sharedManager jkStreaming] initializeStream:nil];
     jkActivity *activity = [[jKoolData sharedManager] activity];
-    [jkkStreaming stream:activity forUrl:@"activity"] ;
+    [[sharedManager jkStreaming] stream:activity forUrl:@"activity"] ;
     [self endBackgroundUpdateTask];
 }
 
@@ -48,9 +49,6 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
 
 + (void)createjKoolActivity
 {
-    // Kick-off locationing
-    //jkkLocation = [[jkLocation alloc] init];
-    //[jkkLocation kickOffLocationing];
     jkActivity *activity = [[jkActivity alloc] initWithName:@"Tracking Activity"];
     NSMutableArray * properties = [[NSMutableArray alloc] init];
     [activity setJkstatus:JK_END];
