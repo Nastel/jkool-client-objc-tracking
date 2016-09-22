@@ -24,14 +24,14 @@ pod 'jkool-client-objc-tracking'
 ```
 
 ## Info.plist 
-If you wish to know the location of the user's device in each event, please add the following to your app's info.plist under 'Required device capabilities':
+If you wish to know the location of the user's device in each event, add the following to your app's info.plist under 'Required device capabilities':
 ```objective-c
 location-services
 gps
 ```
 
 ## Add to AppDelegate
-To get the Tracking working, please add the following to your AppDelegate. Please note that your 'token' you wil get when your register for jKool.
+To get the Tracking working, add the following to your AppDelegate. Please note that your 'token' you will obtain when your register for jKool.
 
 To applicationDidBecomeActive and applicationWillEnterForeground add:
 ```objective-c
@@ -50,7 +50,7 @@ To didFinishLaunchingWithOptions add:
 
 ## Seeing results
 
-There is an Example app in this pod. It contains a complete working app with all of the above mentioned code in it. Simply replace your access token where “your-token” is specified in order to see the app working. We recommend you do the following:
+There is an Example app in this pod. It contains a complete working app with all of the above mentioned code in it. Simply replace “your-token” with the token that was assigned to you when you registered for jKool. To get a feel for this Tracking API, We recommend you do the following:
 
 * Run the App. 
 * Click all three buttons. 
