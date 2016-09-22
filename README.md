@@ -35,7 +35,7 @@ To get the Tracking working, add the following to your AppDelegate. Please note 
 
 To applicationDidBecomeActive and applicationWillEnterForeground add:
 ```objective-c
- [jKoolTracking createjKoolActivity];
+[jKoolTracking createjKoolActivity];
 ```
 
 To applicationDidEnterBackground add:
