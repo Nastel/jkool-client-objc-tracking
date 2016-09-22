@@ -31,7 +31,7 @@ gps
 ```
 
 ## Add to AppDelegate
-To get the Tracking working, add the following to your AppDelegate. Please note that your 'token' you will obtain when your register for jKool.
+To get the Tracking working, add the following to your AppDelegate. Please note that 'your-token' you will obtain when your register for jKool.
 
 To applicationDidBecomeActive and applicationWillEnterForeground add:
 ```objective-c
