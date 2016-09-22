@@ -45,11 +45,11 @@
     
     // Stream Event
     jKoolStreaming *jkStreaming = [sharedManager jkStreaming];
-    jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:selectorName];
-    [jKoolEvent setMsgText:[NSString stringWithFormat:@"%@", [sharedManager vc]]] ;
-    [jKoolEvent setUser:@"Cathy"];
+    jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:[NSString stringWithFormat:@"%@ on %@", selectorName, [sharedManager vc]]];
+    [jKoolEvent setMsgTag:[NSString stringWithFormat:@"%@", [sharedManager vc]]] ;
+    //[jKoolEvent setUser:@"Cathy"];
     [jKoolEvent setGeoAddr:[[sharedManager location] getCoordinates]];
-    [jKoolEvent setResource:@"my resource"];
+    //[jKoolEvent setResource:@"my resource"];
     [jKoolEvent setParentTrackId:[[sharedManager activity] trackingId]];
     [jkStreaming stream:jKoolEvent forUrl:@"event"];
     
