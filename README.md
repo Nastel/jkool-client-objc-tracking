@@ -77,7 +77,7 @@ Activity fields:
 * EndTime - The time the activity ended. This will be the time the app got sent to background.
 
 ## Special note about properties
-Custom fields are stored in jKool 'properties'. This tracking API is using properties to store descriptive location fields and to store information about the device. Please refer to the [JKQL Query Language](http://www.jkoolcloud.com/download/jKQL%20User%20Guide.pdf) to see how to query properties as they require special syntax.
+In normal streaming to jKool via the jKool Client API, custom user fields are stored in jKool 'properties'. This tracking API is making useof 'properties' to store descriptive location information and to store information about the device. Please refer to the [JKQL Query Language](http://www.jkoolcloud.com/download/jKQL%20User%20Guide.pdf) to see how to query properties as they require special syntax.
 
 ##Support
 
