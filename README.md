@@ -50,12 +50,17 @@ To didFinishLaunchingWithOptions add:
 
 ## Seeing results
 
-There is an Example app in this pod. It contains a complete working app with all of the above mentioned code in it. Simply replace “your-token” with the token that was assigned to you when you registered for jKool. To get a feel for this Tracking API, We recommend you do the following:
+There is an Example app in this pod. It contains a complete working app with all of the above mentioned code in it. Simply replace “your-token” with the token that was assigned to you when you registered for jKool. To get a feel for this Tracking API, we recommend you do the following:
 
 * Run the App. 
 * Click all three buttons. 
 * Exit the App. Please note that it is important to exit. Your data will not get into your jKool repository until your app is exited or pushed to the background. 
 * View the streamed data in jKool by logging into your jKool repository.  Simply do "get events fields all" to see the three clicked events and do "get activites fields all" to see the streamed activity. 
+
+## Understanding Results
+The following lists the Event fields and the data that is stored in them. We are only listing fields that should be of interest for you regarding Tracking. Additional fields you may notice, may be of interest to you if you are streaming your own custom data. Please see the [jKool Client API] (https://github.com/Nastel/jkool-client-objc-api) and ... for more information on these fields and on how to stream your own custom data.
+
+The following lists the Activity fields and the data that is stored in them:
 
 ##Support
 
