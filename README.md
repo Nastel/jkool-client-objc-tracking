@@ -61,11 +61,11 @@ There is an Example app in this pod. It contains a complete working app with all
 The following lists the Event and Activity fields and the data that is stored in them. We are only listing fields that should be of interest for you regarding Tracking. Additional fields you may notice, may be of interest to you if you are streaming your own custom data. Please see the [jKool Client API] (https://github.com/Nastel/jkool-client-objc-api) and the [jKool Model Guide](https://www.jkoolcloud.com/download/jkool-model.pdf) for more information on these fields and on how to stream your own custom data.
 
 Event Fields:
-* Event Id - 
-* Parent Id - 
-* Event Name - 
-* Start Time - 
-* Tag - 
+* EventId - A unique identifier for the streamed event.
+* ParentId - The unique identifier of the activity associated with the event.
+* EventName - The name of the event. This will be the name of the Action that was trigger concatenated with the name of the ViewContoller that the action occurred on.
+* StartTime - The time the action occurred.
+* Tag - The name of the ViewController that the action occurred on.
 
 Activity fields:
 * Properties - 
