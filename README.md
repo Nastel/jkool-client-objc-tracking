@@ -24,8 +24,7 @@ pod 'jkool-client-objc-tracking'
 ```
 
 ## Info.plist 
-To use this Api, some enhancements will need to be made to your app's info.plist.
-If you wish to know the location of the device for each event, add the following to your app's 'Required device capabilities':
+If you wish to know the location of the user's device in each event, please add the following to your app's info.plist under 'Required device capabilities':
 ```objective-c
 location-services
 gps
