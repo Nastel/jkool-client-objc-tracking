@@ -58,17 +58,19 @@ There is an Example app in this pod. It contains a complete working app with all
 * View the streamed data in jKool by logging into your jKool repository.  Simply do "get events fields all" to see the three clicked events and do "get activites fields all" to see the streamed activity. 
 
 ## Understanding Results
-The following lists the Event fields and the data that is stored in them. We are only listing fields that should be of interest for you regarding Tracking. Additional fields you may notice, may be of interest to you if you are streaming your own custom data. Please see the [jKool Client API] (https://github.com/Nastel/jkool-client-objc-api) and the [jKool Model Guide](https://www.jkoolcloud.com/download/jkool-model.pdf) for more information on these fields and on how to stream your own custom data.
+The following lists the Event and Activity fields and the data that is stored in them. We are only listing fields that should be of interest for you regarding Tracking. Additional fields you may notice, may be of interest to you if you are streaming your own custom data. Please see the [jKool Client API] (https://github.com/Nastel/jkool-client-objc-api) and the [jKool Model Guide](https://www.jkoolcloud.com/download/jkool-model.pdf) for more information on these fields and on how to stream your own custom data.
 
+Event Fields:
 * Event Id - 
 * Parent Id - 
 * Event Name - 
 * Start Time - 
 * Tag - 
+
+Activity fields:
 * Properties - 
 * GeoLocation - 
-
-The following lists the Activity fields and the data that is stored in them:
+* EventId - 
 
 ##Support
 
