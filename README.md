@@ -66,12 +66,12 @@ Event Fields:
 * EventName - The name of the event. This will be the name of the Action that was trigger concatenated with the name of the ViewContoller that the action occurred on.
 * StartTime - The time the action occurred.
 * Tag - The name of the ViewController that the action occurred on.
-* Properties - Properties on the Event contain specifics about the location that the event occurred. It will contain: the city name, country, state, timezone, latitude and longitude.
-* GeoLocaton - the GPS coordinates fo the location that the event occurred.
+* Properties - Properties on the Event contain specifics about the location that the event occurred at. It will contain: the city name, country, state, timezone, latitude and longitude.
+* GeoLocaton - the GPS coordinates of the location that the event occurred at.
 
 Activity fields:
 * Properties - descriptive location information (like event properties) as well as information about the device such as: free memory, iOS version, phone carrier, etc.
-* GeoLocaton - the GPS coordinates fo the location that the event occurred.
+* GeoLocaton - the GPS coordinates of the location that the event occurred at.
 * EventId - this is a list of events that occurred during the activity
 * StartTime - the time the activity started. This will either be the time the app was launched or the time came to the foreground.
 * EndTime - the time the activity ended. This will be the time the app got sent to background.
