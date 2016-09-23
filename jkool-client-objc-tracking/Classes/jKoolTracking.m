@@ -34,6 +34,49 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     [[sharedManager jkStreaming] initializeStream:nil];
 }
 
++ (void) setCustomApplicationName : (NSString *) applName andDataCenter : (NSString *) dataCenter andResource : (NSString *) resource andSsn : (NSString *) ssn andCorrelators: (NSArray *) correlators andActivityName : (NSString *) activityName
+{
+    jKoolData *sharedManager = [jKoolData sharedManager];
+    if (applName != nil)
+    {
+        [sharedManager setApplicationName:applName];
+    }
+    if (dataCenter != nil)
+    {
+        [sharedManager setDataCenter:dataCenter];
+    }
+    if (resource != nil)
+    {
+        [sharedManager setResource:resource];
+    }
+    if (ssn != nil)
+    {
+        [sharedManager setSsn:ssn];
+    }
+    else
+    {
+        [sharedManager setSsn:@"jKool Tracking Api"];
+    }
+    if ([correlators count] > 0)
+    {
+        [sharedManager setCorrelators:correlators];
+    }
+    if (activityName != nil)
+    {
+        [sharedManager setActivityName:activityName];
+    }
+    else
+    {
+        [sharedManager setActivityName:@"Tracking Activity"];
+    }
+}
+
++ (void) disableStreamActions : (NSArray *) actions : (NSString *) viewControllers : (NSArray *) vcs
+{
+    jKoolData *sharedManager = [jKoolData sharedManager];
+    [sharedManager setToken:actions];
+}
+
 + (void)streamjKoolActivity
 {
     [self beginBackgroundUpdateTask];
@@ -41,6 +84,14 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     [[sharedManager jkStreaming] setToken:[[jKoolData sharedManager]  token]];
     [[sharedManager jkStreaming] initializeStream:nil];
     jkActivity *activity = [[jKoolData sharedManager] activity];
+    NSTimeInterval seconds = [[NSDate date]  timeIntervalSince1970];
+    [activity setEndTimeUsec:seconds*1000.0];
+    [activity setElapsedTimeUsec:[activity endTimeUsec] - [activity startTimeUsec]];
+    [activity setResource:[sharedManager resource]];
+    [activity setAppl:[sharedManager applicationName]];
+    [activity setDataCenter:[sharedManager dataCenter]];
+    [activity setEventName:[sharedManager activityName]];
+    //[activity setCorrId:[sharedManager correlators]];
     [[sharedManager jkStreaming] stream:activity forUrl:@"activity"] ;
     [self endBackgroundUpdateTask];
 }
@@ -50,24 +101,26 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
 + (void)createjKoolActivity
 {
     jkActivity *activity = [[jkActivity alloc] initWithName:@"Tracking Activity"];
+    NSTimeInterval seconds = [[NSDate date]  timeIntervalSince1970];
+    [activity setStartTimeUsec:seconds*1000.0];
     NSMutableArray * properties = [[NSMutableArray alloc] init];
     [activity setJkstatus:JK_END];
-    [activity setReasonCode:9];
-    [activity setException:@"my exception"];
-    [activity setUser:@"Cathy"];
-    
-     jKoolData *sharedManager = [jKoolData sharedManager];
+    //[activity setReasonCode:9];
+    [activity setException:@"none"];
+   // [activity setUser:@"Cathy"];
+    [activity setServer:[[UIDevice currentDevice] name]];
+    jKoolData *sharedManager = [jKoolData sharedManager];
+    [activity setNetAddr:[sharedManager activityName]];
     [activity setGeoAddr:[[sharedManager location] getCoordinates]];
-    [activity setResource:@"my resource"];
     jkProperty * propiOSVersion = [[jkProperty alloc] initWithName:@"iOSVersion" andType:@"NSString" andValue:[[UIDevice currentDevice] systemVersion]];
     jkProperty * propModel = [[jkProperty alloc] initWithName:@"model" andType:@"NSString" andValue:[[UIDevice currentDevice] model]];
-    jkProperty * propVersion = [[jkProperty alloc] initWithName:@"version" andType:@"NSString" andValue:[self platformRawString]];
+    jkProperty * propHardware = [[jkProperty alloc] initWithName:@"hardware" andType:@"NSString" andValue:[self platformRawString]];
     CTTelephonyNetworkInfo *phoneInfo = [[CTTelephonyNetworkInfo alloc] init];
     NSString *phoneCarrier = [[phoneInfo subscriberCellularProvider] carrierName];
     jkProperty * propPhoneCarrier = [[jkProperty alloc] initWithName:@"phoneCarrier" andType:@"NSString" andValue: (phoneCarrier != nil) ? phoneCarrier : @"N/A"];
     jkProperty * propFreeMemory = [[jkProperty alloc] initWithName:@"freeMemory" andType:@"NSNumber" andValue:[NSString stringWithFormat:@"%ld",(long)get_free_memory]];
     [properties addObject:propiOSVersion];
-    [properties addObject:propVersion];
+    [properties addObject:propHardware];
     [properties addObject:propModel];
     [properties addObject:propPhoneCarrier];
     [properties addObject:propFreeMemory];
@@ -142,6 +195,8 @@ static natural_t get_free_memory(void)
     natural_t mem_free = vm_stat.free_count * pagesize;
     return mem_free;
 }
+
+
 
 
 

@@ -8,6 +8,11 @@
 @synthesize activity;
 @synthesize location;
 @synthesize jkStreaming;
+@synthesize applicationName;
+@synthesize dataCenter;
+@synthesize resource;
+@synthesize ssn;
+@synthesize correlators;
 
 #pragma mark Singleton Methods
 

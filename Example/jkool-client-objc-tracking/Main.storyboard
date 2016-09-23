@@ -28,7 +28,7 @@
                                 <rect key="frame" x="20" y="208" width="280" height="172"/>
                                 <state key="normal" title="Button B"/>
                                 <connections>
-                                    <action selector="buttonThreeClick:" destination="whP-gf-Uak" eventType="touchDown" id="Qc3-VY-x6R"/>
+                                    <action selector="buttonTwoClick:" destination="whP-gf-Uak" eventType="touchDown" id="hQO-5U-Jh0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH1-m7-uqg">

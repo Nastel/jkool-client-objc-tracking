@@ -45,12 +45,14 @@
     
     // Stream Event
     jKoolStreaming *jkStreaming = [sharedManager jkStreaming];
-    jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:[NSString stringWithFormat:@"%@ on %@", selectorName, [sharedManager vc]]];
-    [jKoolEvent setMsgTag:[NSString stringWithFormat:@"%@", [sharedManager vc]]] ;
-    //[jKoolEvent setUser:@"Cathy"];
+    jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:[NSString stringWithFormat:@"%@", selectorName]];
+    [jKoolEvent setResource:[NSString stringWithFormat:@"%@", [sharedManager vc]]] ;
     [jKoolEvent setGeoAddr:[[sharedManager location] getCoordinates]];
-    //[jKoolEvent setResource:@"my resource"];
     [jKoolEvent setParentTrackId:[[sharedManager activity] trackingId]];
+    [jKoolEvent setAppl:[sharedManager applicationName]];
+    [jKoolEvent setServer:[[UIDevice currentDevice] name]];
+    [jKoolEvent setDataCenter:[sharedManager dataCenter]];
+    [jKoolEvent setMsgTag:nil];
     [jkStreaming stream:jKoolEvent forUrl:@"event"];
     
     return [self heap_sendAction:action to:target from:sender forEvent:event];
