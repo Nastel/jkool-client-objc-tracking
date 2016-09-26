@@ -91,7 +91,8 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     [activity setAppl:[sharedManager applicationName]];
     [activity setDataCenter:[sharedManager dataCenter]];
     [activity setEventName:[sharedManager activityName]];
-    //[activity setCorrId:[sharedManager correlators]];
+    //[activity setSourceSsn:[sharedManager sourceSsn]];
+    [activity setCorrId:[sharedManager correlators]];
     [[sharedManager jkStreaming] stream:activity forUrl:@"activity"] ;
     [self endBackgroundUpdateTask];
 }
