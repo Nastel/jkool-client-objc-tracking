@@ -18,22 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyt-Jy-iQq">
-                                <frame key="frameInset" minX="20" minY="28" width="280" height="172"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyt-Jy-iQq">
                                 <state key="normal" title="Button A"/>
                                 <connections>
                                     <action selector="buttonOneClick:" destination="whP-gf-Uak" eventType="touchDown" id="j7G-Sc-jGf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vp-5t-ma9">
-                                <frame key="frameInset" minX="20" minY="208" width="280" height="172"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vp-5t-ma9">
                                 <state key="normal" title="Button B"/>
                                 <connections>
                                     <action selector="buttonTwoClick:" destination="whP-gf-Uak" eventType="touchDown" id="hQO-5U-Jh0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH1-m7-uqg">
-                                <frame key="frameInset" minX="20" minY="388" width="280" height="172"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH1-m7-uqg">
                                 <state key="normal" title="Button C"/>
                                 <connections>
                                     <action selector="buttonThreeClick:" destination="whP-gf-Uak" eventType="touchDown" id="85m-t3-Hks"/>
@@ -75,7 +72,7 @@
         <!--Screen 2-->
         <scene sceneID="opM-4N-7I8">
             <objects>
-                <viewController title="Screen 2" id="PAd-Mo-pml" sceneMemberID="viewController">
+                <viewController title="Screen 2" id="PAd-Mo-pml" customClass="jkViewController2" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LGU-mQ-kDi"/>
                         <viewControllerLayoutGuide type="bottom" id="ClH-pj-tx8"/>
@@ -83,12 +80,47 @@
                     <view key="view" contentMode="scaleToFill" id="akP-Li-I8b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAm-uX-48K">
+                                <state key="normal" title="Button A"/>
+                                <connections>
+                                    <action selector="buttonOneClick:" destination="PAd-Mo-pml" eventType="touchDown" id="bgR-Lt-Wng"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wm8-I6-oIV">
+                                <state key="normal" title="Button C"/>
+                                <connections>
+                                    <action selector="buttonThreeClick:" destination="PAd-Mo-pml" eventType="touchDown" id="epB-ps-q6A"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIG-Jb-gwl">
+                                <state key="normal" title="Button B"/>
+                                <connections>
+                                    <action selector="buttonTwoClick:" destination="PAd-Mo-pml" eventType="touchDown" id="VHb-wk-2xW"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pAm-uX-48K" firstAttribute="top" secondItem="LGU-mQ-kDi" secondAttribute="bottom" constant="63" id="3TR-Fg-0Ng"/>
+                            <constraint firstItem="wm8-I6-oIV" firstAttribute="leading" secondItem="akP-Li-I8b" secondAttribute="leading" constant="24" id="5S3-Q5-30y"/>
+                            <constraint firstItem="UIG-Jb-gwl" firstAttribute="top" secondItem="pAm-uX-48K" secondAttribute="bottom" constant="150" id="5bV-S4-2FR"/>
+                            <constraint firstAttribute="trailing" secondItem="UIG-Jb-gwl" secondAttribute="trailing" constant="16" id="GZf-Ts-gep"/>
+                            <constraint firstItem="ClH-pj-tx8" firstAttribute="top" secondItem="wm8-I6-oIV" secondAttribute="bottom" constant="-136" id="TxJ-3O-psj"/>
+                            <constraint firstItem="UIG-Jb-gwl" firstAttribute="leading" secondItem="akP-Li-I8b" secondAttribute="leading" constant="24" id="WSx-Sv-vBr"/>
+                            <constraint firstItem="pAm-uX-48K" firstAttribute="leading" secondItem="akP-Li-I8b" secondAttribute="leading" constant="24" id="YCE-aj-71D"/>
+                            <constraint firstItem="wm8-I6-oIV" firstAttribute="top" secondItem="UIG-Jb-gwl" secondAttribute="bottom" constant="-45" id="YXA-GP-Tks"/>
+                            <constraint firstItem="wm8-I6-oIV" firstAttribute="top" secondItem="UIG-Jb-gwl" secondAttribute="bottom" constant="-45" id="ZFB-4d-Tcv"/>
+                            <constraint firstItem="wm8-I6-oIV" firstAttribute="top" secondItem="UIG-Jb-gwl" secondAttribute="bottom" constant="-45" id="gUA-7I-1eX"/>
+                            <constraint firstAttribute="trailing" secondItem="wm8-I6-oIV" secondAttribute="trailing" constant="16" id="nhU-pt-SPU"/>
+                            <constraint firstItem="UIG-Jb-gwl" firstAttribute="top" secondItem="pAm-uX-48K" secondAttribute="bottom" constant="150" id="urH-B5-82i"/>
+                            <constraint firstAttribute="trailing" secondItem="pAm-uX-48K" secondAttribute="trailing" constant="16" id="xjl-v5-QrQ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sh-Ku-NZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1819" y="565"/>
+            <point key="canvasLocation" x="1818.4000000000001" y="564.46776611694156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mGe-Au-ssl">

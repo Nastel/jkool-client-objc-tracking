@@ -23,6 +23,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		9A66C8F01D9AAFDD0068192D /* jkViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A66C8EF1D9AAFDD0068192D /* jkViewController2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		63A6DBD0094EC36D67439862 /* Pods-jkool-client-objc-tracking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jkool-client-objc-tracking_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jkool-client-objc-tracking_Example/Pods-jkool-client-objc-tracking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		854BF2EBF8F0D6DBE2498176 /* Pods_jkool_client_objc_tracking_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jkool_client_objc_tracking_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9A66C8EE1D9AAFDD0068192D /* jkViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jkViewController2.h; sourceTree = "<group>"; };
+		9A66C8EF1D9AAFDD0068192D /* jkViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jkViewController2.m; sourceTree = "<group>"; };
 		A415B753438092AE89B2DD12 /* Pods-jkool-client-objc-tracking_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jkool-client-objc-tracking_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-jkool-client-objc-tracking_Example/Pods-jkool-client-objc-tracking_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DE5286AD74A7D2EAEF8DF35F /* Pods-jkool-client-objc-tracking_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jkool-client-objc-tracking_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jkool-client-objc-tracking_Tests/Pods-jkool-client-objc-tracking_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F710CF52AF305DAC3CFC06BD /* Pods-jkool-client-objc-tracking_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jkool-client-objc-tracking_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-jkool-client-objc-tracking_Tests/Pods-jkool-client-objc-tracking_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 		6003F593195388D20070C39A /* Example for jkool-client-objc-tracking */ = {
 			isa = PBXGroup;
 			children = (
+				9A66C8EE1D9AAFDD0068192D /* jkViewController2.h */,
+				9A66C8EF1D9AAFDD0068192D /* jkViewController2.m */,
 				6003F59C195388D20070C39A /* jkAppDelegate.h */,
 				6003F59D195388D20070C39A /* jkAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -390,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A66C8F01D9AAFDD0068192D /* jkViewController2.m in Sources */,
 				6003F59E195388D20070C39A /* jkAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* jkViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
