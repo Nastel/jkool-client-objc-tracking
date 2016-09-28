@@ -61,6 +61,7 @@
             [jKoolEvent setServer:[[UIDevice currentDevice] name]];
             [jKoolEvent setDataCenter:[sharedManager dataCenter]];
             [jKoolEvent setMsgTag:nil];
+            [jKoolEvent setNetAddr:[sharedManager ipAddress]];
             [jkStreaming stream:jKoolEvent forUrl:@"event"];
     }
     return [self heap_sendAction:action to:target from:sender forEvent:event];

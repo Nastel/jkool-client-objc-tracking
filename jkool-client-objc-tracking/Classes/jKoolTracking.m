@@ -97,6 +97,7 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     [[sharedManager jkStreaming] setToken:[[jKoolData sharedManager]  token]];
     [[sharedManager jkStreaming] initializeStream:nil];
     jkActivity *activity = [[jKoolData sharedManager] activity];
+    [activity setGeoAddr:[[sharedManager location] getCoordinates]];
     NSTimeInterval seconds = [[NSDate date]  timeIntervalSince1970];
     [activity setEndTimeUsec:seconds*1000.0];
     [activity setElapsedTimeUsec:[activity endTimeUsec] - [activity startTimeUsec]];
@@ -119,14 +120,16 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     [activity setResource:[sharedManager resource]];
     [activity setAppl:[sharedManager applicationName]];
     [activity setDataCenter:[sharedManager dataCenter]];
-    [activity setEventName:[sharedManager activityName]];
+    if ([sharedManager activityName]!= nil)
+    {
+        [activity setEventName:[sharedManager activityName]];
+    }
     //[activity setSourceSsn:[sharedManager sourceSsn]];
     [activity setCorrId:[sharedManager correlators]];
     [activity setNetAddr:[sharedManager ipAddress]];
 
     [activity setServer:[[UIDevice currentDevice] name]];
     [activity setNetAddr:[sharedManager ipAddress]];
-    [activity setGeoAddr:[[sharedManager location] getCoordinates]];
     jkProperty * propiOSVersion = [[jkProperty alloc] initWithName:@"iOSVersion" andType:@"NSString" andValue:[[UIDevice currentDevice] systemVersion]];
     jkProperty * propModel = [[jkProperty alloc] initWithName:@"model" andType:@"NSString" andValue:[[UIDevice currentDevice] model]];
     jkProperty * propHardware = [[jkProperty alloc] initWithName:@"hardware" andType:@"NSString" andValue:[self platformRawString]];
