@@ -48,6 +48,33 @@ To didFinishLaunchingWithOptions add:
 [jKoolTracking initializeTracking:@"your-token"];
 ```
 
+## Streaming Crashes
+If you wish to stream uncaught error exceptions, you can easily do so by adding the following to to your AppDelegate's Uncaught Exception Handler (an entire handler is given in case you don't already have one):
+```objective-c
+void onUnCaughtException (NSException *exception)
+{
+    [jKoolTracking jKoolExceptionHandler:exception];
+    // Sleeping is necessary to give it time to streaam.
+    [NSThread sleepForTimeInterval:5.0f];
+}... 
+```
+With the following in didFinishLaunchWithOptions
+```objective-c
+NSSetUncaughtExceptionHandler(&onUncaughtException);
+```
+
+## Custom Fields
+Certain fields that will normally be defaulted you can override with you own custom data. So set these fields, add the following method call to didFinishLaunchingWithOptions: 
+```objective-c
+[jKoolTracking setCustomApplicationName:@"<your-application-name>" andDataCenter:@"<your-data-center>" andResource:@"<your-activity-resource>" andSsn:<your-source> andCorrelators:[NSArray arrayWithObjects:@"<your-custom-correlator>",@"<your-custom-correlator>",..., nil] andActivityName:@"<your-activity-name>"];
+```
+
+## Disabling specific streaming 
+Presently, this tracking Api streams all actions (with corresponding View Controllers specified) and all uncaught exceptions (if specified to in the AppDelegate). Streaming can be turned on and off via the following method in didFinishLaunchWithOptions. Specify YES if you wish to disable streaming, NO otherwise. 
+```objective-c
+[jKoolTracking disableStreamingErrors:YES andActions:YES]
+```
+
 ## Seeing results
 
 There is an Example app in this pod. It contains a complete working app with all of the above mentioned code in it. Simply replace “your-token” with the token that was assigned to you when you registered for jKool. To get a feel for this Tracking API, we recommend you do the following:
