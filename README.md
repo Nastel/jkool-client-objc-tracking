@@ -70,6 +70,10 @@ Certain fields that will normally be defaulted you can override with you own cus
 ```
 
 ## Disabling specific streaming 
+Presently, this tracking Api streams all actions (with corresponding View Controllers specified) and all uncaught exceptions (if specified to in the AppDelegate). Streaming can be turned on and off via the following method in didFinishLaunchWithOptions. Specify YES if you wish to disable streaming, NO otherwise. 
+```objective-c
+[jKoolTracking disableStreamingErrors:YES andActions:YES]
+```
 
 ## Seeing results
 
