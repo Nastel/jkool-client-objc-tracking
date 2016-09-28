@@ -83,10 +83,11 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     }
 }
 
-+ (void) disableStreamActions : (NSArray *) actions : (NSString *) viewControllers : (NSArray *) vcs
++ (void) disableStreamErrors : (bool) error  andActions : (bool) action;
 {
     jKoolData *sharedManager = [jKoolData sharedManager];
-    [sharedManager setToken:actions];
+    [sharedManager setDisableErrors:error];
+    [sharedManager setDisableActions:action];
 }
 
 + (void)streamjKoolActivity

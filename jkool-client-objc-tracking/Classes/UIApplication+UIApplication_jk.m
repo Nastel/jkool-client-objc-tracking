@@ -42,23 +42,27 @@
     }
 }
 
-- (BOOL)heap_sendAction:(SEL)action to:(id)target from:(id)sender forEvent:(UIEvent *)event {
-    NSString *selectorName = NSStringFromSelector(action);
-    jKoolData *sharedManager = [jKoolData sharedManager];
-    printf("Selector %s occurred.\n", [selectorName UTF8String]);
+- (BOOL)heap_sendAction:(SEL)action to:(id)target from:(id)sender forEvent:(UIEvent *)event
+    {
+        jKoolData *sharedManager = [jKoolData sharedManager];
+        if (![sharedManager disableActions])
+        {
+            NSString *selectorName = NSStringFromSelector(action);
+            jKoolData *sharedManager = [jKoolData sharedManager];
+            printf("Selector %s occurred.\n", [selectorName UTF8String]);
     
-    // Stream Event
-    jKoolStreaming *jkStreaming = [sharedManager jkStreaming];
-    jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:[NSString stringWithFormat:@"%@", selectorName]];
-    [jKoolEvent setResource:[NSString stringWithFormat:@"%@", [sharedManager vc]]];
-    [jKoolEvent setGeoAddr:[[sharedManager location] getCoordinates]];
-    [jKoolEvent setParentTrackId:[[sharedManager activity] trackingId]];
-    [jKoolEvent setAppl:[sharedManager applicationName]];
-    [jKoolEvent setServer:[[UIDevice currentDevice] name]];
-    [jKoolEvent setDataCenter:[sharedManager dataCenter]];
-    [jKoolEvent setMsgTag:nil];
-    [jkStreaming stream:jKoolEvent forUrl:@"event"];
-    
+            // Stream Event
+            jKoolStreaming *jkStreaming = [sharedManager jkStreaming];
+            jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:[NSString stringWithFormat:@"%@", selectorName]];
+            [jKoolEvent setResource:[NSString stringWithFormat:@"%@", [sharedManager vc]]];
+            [jKoolEvent setGeoAddr:[[sharedManager location] getCoordinates]];
+            [jKoolEvent setParentTrackId:[[sharedManager activity] trackingId]];
+            [jKoolEvent setAppl:[sharedManager applicationName]];
+            [jKoolEvent setServer:[[UIDevice currentDevice] name]];
+            [jKoolEvent setDataCenter:[sharedManager dataCenter]];
+            [jKoolEvent setMsgTag:nil];
+            [jkStreaming stream:jKoolEvent forUrl:@"event"];
+    }
     return [self heap_sendAction:action to:target from:sender forEvent:event];
 }
 @end

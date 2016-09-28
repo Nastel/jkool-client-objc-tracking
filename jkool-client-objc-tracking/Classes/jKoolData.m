@@ -15,6 +15,8 @@
 @synthesize correlators;
 @synthesize connectionType;
 @synthesize ipAddress;
+@synthesize disableActions;
+@synthesize disableErrors;
 
 #pragma mark Singleton Methods
 

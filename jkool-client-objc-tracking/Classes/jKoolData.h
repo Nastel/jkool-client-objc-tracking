@@ -36,6 +36,8 @@ typedef enum {
     jKoolStreaming *jkStreaming;
     ConnectionType *connectionType;
     NSString *ipAddress;
+    bool *disableActions;
+    bool *disableErrors;
 }
 
 
@@ -54,6 +56,8 @@ typedef enum {
 @property (nonatomic, retain) NSArray *correlators;
 @property (nonatomic) ConnectionType *connectionType;
 @property (nonatomic, retain) NSString *ipAddress;
+@property (nonatomic) bool *disableErrors;
+@property (nonatomic) bool *disableActions;
 
 
 

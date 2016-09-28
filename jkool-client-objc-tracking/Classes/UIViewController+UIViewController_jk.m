@@ -39,7 +39,6 @@
                         originalSelector,
                         method_getImplementation(swizzledMethod),
                         method_getTypeEncoding(swizzledMethod));
-        
         if (didAddMethod && [jKoolTracking connectionType] == ConnectionTypeWiFi)
         {
             class_replaceMethod(class,
