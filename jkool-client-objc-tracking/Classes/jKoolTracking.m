@@ -298,16 +298,19 @@ static natural_t get_free_memory(void)
 + (bool) jKoolExceptionHandler: (NSException *) exception;
 {
     jKoolData *sharedManager = [jKoolData sharedManager];
-    jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:@"Error"];
-    [jKoolEvent setResource:[NSString stringWithFormat:@"%@", [sharedManager vc]]];
-    [jKoolEvent setGeoAddr:[[sharedManager location] getCoordinates]];
-    [jKoolEvent setParentTrackId:[[sharedManager activity] trackingId]];
-    [jKoolEvent setAppl:[sharedManager applicationName]];
-    [jKoolEvent setServer:[[UIDevice currentDevice] name]];
-    [jKoolEvent setDataCenter:[sharedManager dataCenter]];
-    [jKoolEvent setMsgTag:nil];
-    [[sharedManager jkStreaming] stream:jKoolEvent forUrl:@"event"];
-    [self streamjKoolActivity];
+    if (![sharedManager disableErrors])
+    {
+        jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:@"Error"];
+        [jKoolEvent setResource:[NSString stringWithFormat:@"%@", [sharedManager vc]]];
+        [jKoolEvent setGeoAddr:[[sharedManager location] getCoordinates]];
+        [jKoolEvent setParentTrackId:[[sharedManager activity] trackingId]];
+        [jKoolEvent setAppl:[sharedManager applicationName]];
+        [jKoolEvent setServer:[[UIDevice currentDevice] name]];
+        [jKoolEvent setDataCenter:[sharedManager dataCenter]];
+        [jKoolEvent setException:exception.description];
+        [[sharedManager jkStreaming] stream:jKoolEvent forUrl:@"event"];
+        [self streamjKoolActivity];
+    }
     return YES;
 }
 

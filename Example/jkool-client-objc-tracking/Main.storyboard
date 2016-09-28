@@ -88,7 +88,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wm8-I6-oIV">
-                                <state key="normal" title="Button C"/>
+                                <state key="normal" title="Crash Me"/>
                                 <connections>
                                     <action selector="buttonThreeClick:" destination="PAd-Mo-pml" eventType="touchDown" id="epB-ps-q6A"/>
                                 </connections>
