@@ -42,6 +42,8 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     [sharedManager setJkStreaming:[[jKoolStreaming alloc] init]];
     [[sharedManager jkStreaming] setToken:[sharedManager token]];
     [[sharedManager jkStreaming] initializeStream:nil];
+    [sharedManager setConnectionType :[self connectionType]];
+    [sharedManager setIpAddress: [self getIPAddress:YES]];
 }
 
 + (void) setCustomApplicationName : (NSString *) applName andDataCenter : (NSString *) dataCenter andResource : (NSString *) resource andSsn : (NSString *) ssn andCorrelators: (NSArray *) correlators andActivityName : (NSString *) activityName
@@ -97,12 +99,6 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     NSTimeInterval seconds = [[NSDate date]  timeIntervalSince1970];
     [activity setEndTimeUsec:seconds*1000.0];
     [activity setElapsedTimeUsec:[activity endTimeUsec] - [activity startTimeUsec]];
-    [activity setResource:[sharedManager resource]];
-    [activity setAppl:[sharedManager applicationName]];
-    [activity setDataCenter:[sharedManager dataCenter]];
-    [activity setEventName:[sharedManager activityName]];
-    //[activity setSourceSsn:[sharedManager sourceSsn]];
-    [activity setCorrId:[sharedManager correlators]];
     [[sharedManager jkStreaming] stream:activity forUrl:@"activity"] ;
     [self endBackgroundUpdateTask];
 }
@@ -111,6 +107,7 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
 
 + (void)createjKoolActivity
 {
+    jKoolData *sharedManager = [jKoolData sharedManager];
     jkActivity *activity = [[jkActivity alloc] initWithName:@"Tracking Activity"];
     NSTimeInterval seconds = [[NSDate date]  timeIntervalSince1970];
     [activity setStartTimeUsec:seconds*1000.0];
@@ -118,10 +115,16 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     [activity setJkstatus:JK_END];
     //[activity setReasonCode:9];
     [activity setException:@"none"];
-   // [activity setUser:@"Cathy"];
+    [activity setResource:[sharedManager resource]];
+    [activity setAppl:[sharedManager applicationName]];
+    [activity setDataCenter:[sharedManager dataCenter]];
+    [activity setEventName:[sharedManager activityName]];
+    //[activity setSourceSsn:[sharedManager sourceSsn]];
+    [activity setCorrId:[sharedManager correlators]];
+    [activity setNetAddr:[sharedManager ipAddress]];
+
     [activity setServer:[[UIDevice currentDevice] name]];
-    jKoolData *sharedManager = [jKoolData sharedManager];
-    [activity setNetAddr:[sharedManager activityName]];
+    [activity setNetAddr:[sharedManager ipAddress]];
     [activity setGeoAddr:[[sharedManager location] getCoordinates]];
     jkProperty * propiOSVersion = [[jkProperty alloc] initWithName:@"iOSVersion" andType:@"NSString" andValue:[[UIDevice currentDevice] systemVersion]];
     jkProperty * propModel = [[jkProperty alloc] initWithName:@"model" andType:@"NSString" andValue:[[UIDevice currentDevice] model]];
@@ -208,15 +211,6 @@ static natural_t get_free_memory(void)
 }
 
 
-typedef enum {
-    ConnectionTypeUnknown,
-    ConnectionTypeNone,
-    ConnectionType3G,
-    ConnectionTypeWiFi
-} ConnectionType;
-
-
-
 
 
 + (ConnectionType)connectionType
@@ -242,7 +236,7 @@ typedef enum {
 }
 
 
-- (NSString *)getIPAddress:(BOOL)preferIPv4
++ (NSString *)getIPAddress:(BOOL)preferIPv4
 {
     NSArray *searchArray = preferIPv4 ?
     @[IOS_WIFI @"/" IP_ADDR_IPv4, IOS_WIFI @"/" IP_ADDR_IPv6, IOS_CELLULAR @"/" IP_ADDR_IPv4, IOS_CELLULAR @"/" IP_ADDR_IPv6 ] :
@@ -260,7 +254,7 @@ typedef enum {
     return address ? address : @"0.0.0.0";
 }
 
-- (NSDictionary *)getIPAddresses
++ (NSDictionary *)getIPAddresses
 {
     NSMutableDictionary *addresses = [NSMutableDictionary dictionaryWithCapacity:8];
     

@@ -20,6 +20,7 @@
 #import "UIViewController+UIViewController_jk.h"
 #import <objc/runtime.h>
 #import "jKoolData.h"
+#import "jKoolTracking.h"
 
 @implementation UIViewController (jk)
 + (void)load {
@@ -39,12 +40,14 @@
                         method_getImplementation(swizzledMethod),
                         method_getTypeEncoding(swizzledMethod));
         
-        if (didAddMethod) {
+        if (didAddMethod && [jKoolTracking connectionType] == ConnectionTypeWiFi)
+        {
             class_replaceMethod(class,
                                 swizzledSelector,
                                 method_getImplementation(originalMethod),
                                 method_getTypeEncoding(originalMethod));
-        } else {
+        } else if ([jKoolTracking connectionType] == ConnectionTypeWiFi)
+        {
             method_exchangeImplementations(originalMethod, swizzledMethod);
         }
     });

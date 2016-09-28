@@ -12,6 +12,16 @@
 #import "jkLocation.h"
 #import "jKoolStreaming.h"
 
+typedef enum {
+    ConnectionTypeUnknown,
+    ConnectionTypeNone,
+    ConnectionType3G,
+    ConnectionTypeWiFi
+} ConnectionType;
+
+
+
+
 @interface jKoolData : NSObject {
     NSString *token;
     NSString *applicationName;
@@ -24,8 +34,12 @@
     jkActivity *activity;
     jkLocation *location;
     jKoolStreaming *jkStreaming;
-
+    ConnectionType *connectionType;
+    NSString *ipAddress;
 }
+
+
+
 
 @property (nonatomic, retain) NSString *token;
 @property (nonatomic, retain) UIViewController *vc;
@@ -38,8 +52,8 @@
 @property (nonatomic, retain) NSString *resource;
 @property (nonatomic, retain) NSString *ssn;
 @property (nonatomic, retain) NSArray *correlators;
-
-
+@property (nonatomic) ConnectionType *connectionType;
+@property (nonatomic, retain) NSString *ipAddress;
 
 
 

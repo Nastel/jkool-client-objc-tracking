@@ -13,6 +13,8 @@
 @synthesize resource;
 @synthesize ssn;
 @synthesize correlators;
+@synthesize connectionType;
+@synthesize ipAddress;
 
 #pragma mark Singleton Methods
 

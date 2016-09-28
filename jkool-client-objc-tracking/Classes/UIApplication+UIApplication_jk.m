@@ -25,6 +25,7 @@
 #import "jkLocation.h"
 #import <UIKit/UIKit.h>
 #import "jKoolData.h"
+#import "jKoolTracking.h"
 
 @implementation UIApplication (UIApplication_jk)
 
@@ -35,7 +36,10 @@
     
     Method originalMethod = class_getInstanceMethod(class, originalSelector);
     Method replacementMethod = class_getInstanceMethod(class, replacementSelector);
-    method_exchangeImplementations(originalMethod, replacementMethod);
+    if ([jKoolTracking connectionType] == ConnectionTypeWiFi)
+    {
+        method_exchangeImplementations(originalMethod, replacementMethod);
+    }
 }
 
 - (BOOL)heap_sendAction:(SEL)action to:(id)target from:(id)sender forEvent:(UIEvent *)event {
@@ -46,7 +50,7 @@
     // Stream Event
     jKoolStreaming *jkStreaming = [sharedManager jkStreaming];
     jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:[NSString stringWithFormat:@"%@", selectorName]];
-    [jKoolEvent setResource:[NSString stringWithFormat:@"%@", [sharedManager vc]]] ;
+    [jKoolEvent setResource:[NSString stringWithFormat:@"%@", [sharedManager vc]]];
     [jKoolEvent setGeoAddr:[[sharedManager location] getCoordinates]];
     [jKoolEvent setParentTrackId:[[sharedManager activity] trackingId]];
     [jKoolEvent setAppl:[sharedManager applicationName]];

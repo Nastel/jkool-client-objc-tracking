@@ -6,8 +6,10 @@
 //
 //
 
+#import "jKoolData.h";
 
 @interface jKoolTracking : NSObject
+
 
 + (void)streamjKoolActivity;
 + (void)createjKoolActivity;
@@ -18,5 +20,6 @@
 + (void) initializeTracking : (NSString *) token;
 + (void) setCustomApplicationName : (NSString *) applName andDataCenter : (NSString *) dataCenter andResource : (NSString *) resource andSsn : (NSString *) ssn andCorrelators: (NSArray *) correlators  andActivityName : (NSString *) activityName;
 + (void) disableStreamActions : (NSArray *) actions : (NSString *) viewControllers : (NSArray *) vcs;
++ (ConnectionType)connectionType;
 
 @end
