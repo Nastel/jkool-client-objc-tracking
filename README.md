@@ -64,7 +64,7 @@ NSSetUncaughtExceptionHandler(&onUncaughtException);
 ```
 
 ## Custom Fields
-Certain fields that will normally be defaulted you can override with you own custom data. So set these fields, add the following method call to didFinishLaunchingWithOptions: 
+Certain fields that will normally be defaulted you can override with you own custom data. To set these fields, add the following method call to didFinishLaunchingWithOptions: 
 ```objective-c
 [jKoolTracking setCustomApplicationName:@"<your-application-name>" andDataCenter:@"<your-data-center>" andResource:@"<your-activity-resource>" andSsn:<your-source> andCorrelators:[NSArray arrayWithObjects:@"<your-custom-correlator>",@"<your-custom-correlator>",..., nil] andActivityName:@"<your-activity-name>"];
 ```
