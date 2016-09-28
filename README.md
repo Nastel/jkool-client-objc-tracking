@@ -81,8 +81,11 @@ There is an Example app in this pod. It contains a complete working app with all
 
 * Run the App. 
 * Click all three buttons. 
+* Navigate to the second screen.
+* Click some buttons on the second screen.
 * Exit the App. Please note that it is important to exit. Your data will not get into your jKool repository until your app is exited or pushed to the background. 
 * View the streamed data in jKool by logging into your jKool repository.  Simply do "get events fields all" to see the three clicked events and do "get activites fields all" to see the streamed activity. 
+* You can see and Error being streamed by running the App and clicking the "Crash Me" button on the second screen. This button causes an uncaught array out of bounds exception.
 
 ## Understanding Results
 The following lists the Event and Activity fields and the data that is stored in them. We are only listing fields that should be of interest for you regarding Tracking. Additional fields you may notice, may be of interest to you if you are streaming your own custom data. Please see the [jKool Client API] (https://github.com/Nastel/jkool-client-objc-api) and the [jKool Model Guide](https://www.jkoolcloud.com/download/jkool-model.pdf) for more information on these additional fields and on how to stream your own custom data.
