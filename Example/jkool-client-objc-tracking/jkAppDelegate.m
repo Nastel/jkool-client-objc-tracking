@@ -15,6 +15,7 @@
 {
     [jKoolTracking initializeTracking:@"HdC0YR5u58UTNyPByFe7GXuHgLFtFx28"];
     [jKoolTracking setCustomApplicationName:@"Cathys Application" andDataCenter:@"Cathys Data Center" andResource:@"Activity Resource" andSsn:nil andCorrelators:[NSArray arrayWithObjects:@"123",@"456",@"789", nil] andActivityName:@"Cathys Activity Name"];
+    NSSetUncaughtExceptionHandler(&onUncaughtException);
 
     return YES;
 }
@@ -45,6 +46,10 @@
 {
 }
 
-
+void onUncaughtException(NSException *exception)
+{
+    bool wait = [jKoolTracking jKoolExceptionHandler:exception];
+    [NSThread sleepForTimeInterval:5.0f];
+}
 
 @end

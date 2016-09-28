@@ -7,6 +7,7 @@
 //
 
 #import "jkViewController.h"
+#import "jKoolTracking.h"
 
 @interface jkViewController ()
 
@@ -30,7 +31,13 @@
 }
 
 - (IBAction)buttonTwoClick:(id)sender {
-    
+    NSMutableArray *forceUncaught = [NSMutableArray arrayWithCapacity:3];
+    [forceUncaught addObject:@"1"];
+    [forceUncaught addObject:@"2"];
+    [forceUncaught addObject:@"3"];
+    [forceUncaught objectAtIndex:5];
+    //[jKoolTracking jKoolExceptionHandler:nil];
+
 }
 
 - (IBAction)buttonThreeClick:(id)sender {
