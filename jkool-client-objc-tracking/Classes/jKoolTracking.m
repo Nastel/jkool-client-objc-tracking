@@ -46,7 +46,7 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     [sharedManager setIpAddress: [self getIPAddress:YES]];
 }
 
-+ (void) setCustomApplicationName : (NSString *) applName andDataCenter : (NSString *) dataCenter andResource : (NSString *) resource andSsn : (NSString *) ssn andCorrelators: (NSArray *) correlators andActivityName : (NSString *) activityName
++ (void) setApplicationName : (NSString *) applName andDataCenter : (NSString *) dataCenter andResource : (NSString *) resource andSsn : (NSString *) ssn andCorrelators: (NSArray *) correlators andActivityName : (NSString *) activityName
 {
     jKoolData *sharedManager = [jKoolData sharedManager];
     if (applName != nil)
@@ -67,7 +67,7 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     }
     else
     {
-        [sharedManager setSsn:@"jKool Tracking Api"];
+        [sharedManager setSsn:@"jKool-iOS-Agent"];
     }
     if ([correlators count] > 0)
     {
@@ -303,14 +303,21 @@ static natural_t get_free_memory(void)
     jKoolData *sharedManager = [jKoolData sharedManager];
     if (![sharedManager disableErrors])
     {
-        jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:@"Error"];
+        NSString *test1 = [exception name ];
+        NSString *test2 = [exception reason ];
+        NSString *test3 = [exception userInfo ];
+        NSString *test4 = [exception callStackSymbols ];
+        NSString *test5 = [exception callStackReturnAddresses ];
+        jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:[NSString stringWithFormat:@"Uncaught Exception - %@",[exception name]]];
         [jKoolEvent setResource:[NSString stringWithFormat:@"%@", [sharedManager vc]]];
         [jKoolEvent setGeoAddr:[[sharedManager location] getCoordinates]];
         [jKoolEvent setParentTrackId:[[sharedManager activity] trackingId]];
         [jKoolEvent setAppl:[sharedManager applicationName]];
-        [jKoolEvent setServer:[[UIDevice currentDevice] name]];
+        [jKoolEvent setServer:@"none"];
         [jKoolEvent setDataCenter:[sharedManager dataCenter]];
         [jKoolEvent setException:exception.description];
+        [jKoolEvent setJkSeverity:JK_SEV_FAILURE];
+        [jKoolEvent setSourceSsn:@"jKool-iOS-Agent"];
         [[sharedManager jkStreaming] stream:jKoolEvent forUrl:@"event"];
         [self streamjKoolActivity];
     }

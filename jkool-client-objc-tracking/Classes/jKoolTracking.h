@@ -18,7 +18,7 @@
 + (void) beginBackgroundUpdateTask;
 + (void) endBackgroundUpdateTask;
 + (void) initializeTracking : (NSString *) token;
-+ (void) setCustomApplicationName : (NSString *) applName andDataCenter : (NSString *) dataCenter andResource : (NSString *) resource andSsn : (NSString *) ssn andCorrelators: (NSArray *) correlators  andActivityName : (NSString *) activityName;
++ (void) setApplicationName : (NSString *) applName andDataCenter : (NSString *) dataCenter andResource : (NSString *) resource andSsn : (NSString *) ssn andCorrelators: (NSArray *) correlators  andActivityName : (NSString *) activityName;
 + (void) disableStreamErrors : (bool) error  andActions : (bool) action;
 + (ConnectionType)connectionType;
 + (bool) jKoolExceptionHandler: (NSException *) exception;

@@ -62,6 +62,8 @@
             [jKoolEvent setDataCenter:[sharedManager dataCenter]];
             [jKoolEvent setSourceSsn:[sharedManager ssn]];
             [jKoolEvent setNetAddr:[sharedManager ipAddress]];
+            [jKoolEvent setType:JK_TYPE_CALL];
+            [jKoolEvent setJkSeverity:JK_SEV_TRACE];
             [jkStreaming stream:jKoolEvent forUrl:@"event"];
     }
     return [self heap_sendAction:action to:target from:sender forEvent:event];
