@@ -44,7 +44,7 @@
     return _msgCharset;
 }
 
-- (void)setServer:(NSString *)msgCharset {
+- (void)setMsgCharset:(NSString *)msgCharset {
     _msgCharset = msgCharset;
 }
 // Msg Encoding

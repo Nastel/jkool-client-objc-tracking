@@ -19,7 +19,7 @@ Please refer to the LICENSE file.
 
 Include this Api by putting the following in your PodFile:
 ```ruby
-pod 'jKooliOSStreaming'
+pod 'jkool-client-objc-api'
 ```
 ## Info.plist 
 To use this Api, some enhancements will need to be made to your app's info.plist.

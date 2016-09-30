@@ -47,6 +47,7 @@
 @property (retain, nonatomic) NSString * geoAddr;
 @property (retain, nonatomic) NSString * eventName;
 @property (retain, nonatomic) NSString * appl;
+@property (retain, nonatomic) NSString * deviceName;
 
 @property (retain, nonatomic) NSString * location;
 @property (retain, nonatomic) NSString * resource;
@@ -54,8 +55,9 @@
 @property (retain, nonatomic) NSString * netAddr;
 @property (retain, nonatomic) NSString * user;
 @property (retain, nonatomic) NSString *sourceFqn;
+@property (retain, nonatomic) NSString *sourceSsn;
 
-@property (retain, nonatomic) NSString * corrId;
+@property (retain, nonatomic) NSArray* corrId;
 @property (retain, nonatomic) NSMutableArray * properties;
 @property (retain, nonatomic) NSMutableArray * snapshots;
 

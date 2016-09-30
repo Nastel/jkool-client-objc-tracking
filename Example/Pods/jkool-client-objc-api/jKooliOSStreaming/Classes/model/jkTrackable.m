@@ -51,12 +51,15 @@
 @synthesize dataCenter = _dataCenter;
 @synthesize geoAddr = _geoAddr;
 @synthesize eventName = _eventName;
+@synthesize deviceName = _deviceName;
+
 
 @synthesize location = _location;
 @synthesize resource = _resource;
 @synthesize server = _server;
 @synthesize netAddr = _netAddr;
 @synthesize sourceFqn = _sourceFqn;
+@synthesize sourceSsn = _sourceSsn;
 @synthesize user = _user;
 
 @synthesize corrId = _corrId;
@@ -87,6 +90,19 @@
 
 - (void)setServer:(NSString *)server {
     _server = server;
+}
+
+// Server
+- (NSString *)deviceName {
+    if (!_deviceName) {
+        _deviceName = [[UIDevice currentDevice] name];
+    }
+    
+    return _deviceName;
+}
+
+- (void)setDeviceName:(NSString *)deviceName {
+    _deviceName = deviceName;
 }
 
 // Tid
@@ -185,7 +201,7 @@
 // Source FQN
 - (NSString *)sourceFqn {
     if (!_sourceFqn) {
-        _sourceFqn = [NSString stringWithFormat:@"APPL=%@#SERVER=%@#NETADDR=%@#DATACENTER=%@#GEOADDR=%@", [self appl], [self server], [self netAddr], [self dataCenter], [self geoAddr]];
+        _sourceFqn = [NSString stringWithFormat:@"APPL=%@#SERVER=%@#NETADDR=%@#DATACENTER=%@#GEOADDR=%@#DEVICE=%@", [self appl], [self server], [self netAddr], [self dataCenter], [self geoAddr], [self deviceName]];
 
     }
     
@@ -345,6 +361,14 @@
     {
         [properties addObject:@"snapshots"];
     }
+    if ([self corrId] != nil)
+    {
+        [properties addObject:@"corrid"];
+    }
+    if ([self sourceSsn] != nil)
+    {
+        [properties addObject:@"source-ssn"];
+    }
     return properties;
 }
 
@@ -417,6 +441,15 @@
         }
         [values addObject:snapshotArray];
     }
+    if ([self corrId] != nil)
+    {
+        [values addObject: [self corrId]];
+    }
+    if ([self sourceSsn] != nil)
+    {
+        [values addObject: [self sourceSsn]];
+    }
+
 
     return values;
 }

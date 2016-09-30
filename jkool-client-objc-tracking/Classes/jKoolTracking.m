@@ -124,7 +124,7 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     {
         [activity setEventName:[sharedManager activityName]];
     }
-    //[activity setSourceSsn:[sharedManager sourceSsn]];
+    [activity setSourceSsn:[sharedManager ssn]];
     [activity setCorrId:[sharedManager correlators]];
     [activity setNetAddr:[sharedManager ipAddress]];
 

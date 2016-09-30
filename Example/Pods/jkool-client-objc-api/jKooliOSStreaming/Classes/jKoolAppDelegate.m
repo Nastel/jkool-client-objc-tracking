@@ -25,7 +25,7 @@
 {
       
 
-    
+    NSSetUncaughtExceptionHandler(&onUncaughtException);
     return YES;
 }
 
@@ -72,7 +72,10 @@
      */
 }
 
-
-
+void onUncaughtException(NSException* exception)
+{
+    NSLog(@"uncaught exception in jkool-client-objc-api: %@", exception.description);
+    
+}
 
 @end

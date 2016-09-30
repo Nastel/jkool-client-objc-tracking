@@ -60,7 +60,7 @@
             [jKoolEvent setAppl:[sharedManager applicationName]];
             [jKoolEvent setServer:[[UIDevice currentDevice] name]];
             [jKoolEvent setDataCenter:[sharedManager dataCenter]];
-            [jKoolEvent setMsgTag:nil];
+            [jKoolEvent setSourceSsn:[sharedManager ssn]];
             [jKoolEvent setNetAddr:[sharedManager ipAddress]];
             [jkStreaming stream:jKoolEvent forUrl:@"event"];
     }
