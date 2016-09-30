@@ -55,6 +55,6 @@
 - (void)jk_viewWillAppear:(BOOL)animated {
     [self jk_viewWillAppear:animated];
     jKoolData *sharedManager = [jKoolData sharedManager];
-    [sharedManager setVc:self];
+    [sharedManager setVc:NSStringFromClass([self class])];
 }
 @end
