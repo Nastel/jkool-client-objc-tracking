@@ -64,6 +64,8 @@
             [jKoolEvent setNetAddr:[sharedManager ipAddress]];
             [jKoolEvent setType:JK_TYPE_CALL];
             [jKoolEvent setJkSeverity:JK_SEV_TRACE];
+            NSUUID *uuid = [NSUUID UUID];
+            [jKoolEvent setUser:[uuid UUIDString]];
             [jkStreaming stream:jKoolEvent forUrl:@"event"];
     }
     return [self heap_sendAction:action to:target from:sender forEvent:event];
