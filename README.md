@@ -48,9 +48,9 @@ To didFinishLaunchingWithOptions add:
 [jKoolTracking initializeTracking:@"your-token" enableErrors:<YES/NO> enableActions:<YES/NO> onlyIfWifi:<YES/NO>];
 ```
 where:
-enableErrors - will enable or disable the streaming of uncaught exceptions
-enableActions - will enable or disable the streaming of actions
-onlyIfWifi - will enable or disable streaming depending on if Wifi is available.
+* enableErrors - will enable or disable the streaming of uncaught exceptions
+* enableActions - will enable or disable the streaming of actions
+* onlyIfWifi - will enable or disable streaming depending on if Wifi is available.
 
 ## Streaming Crashes (optional)
 If you wish to stream uncaught error exceptions, you can easily do so by adding the following to to your AppDelegate's Uncaught Exception Handler (an entire handler is given in case you don't already have one):
