@@ -17,9 +17,8 @@
 + (NSString *)platformRawString;
 + (void) beginBackgroundUpdateTask;
 + (void) endBackgroundUpdateTask;
-+ (void) initializeTracking : (NSString *) token;
++ (void) initializeTracking : (NSString *) token enableErrors : (bool) enableErrors enableActions : (bool) enableActions onlyIfWifi : (bool) onlyIfWifi;
 + (void) setApplicationName : (NSString *) applName andDataCenter : (NSString *) dataCenter andResource : (NSString *) resource andSsn : (NSString *) ssn andCorrelators: (NSArray *) correlators  andActivityName : (NSString *) activityName;
-+ (void) disableStreamErrors : (bool) error  andActions : (bool) action;
 + (ConnectionType)connectionType;
 + (bool) jKoolExceptionHandler: (NSException *) exception;
 @end

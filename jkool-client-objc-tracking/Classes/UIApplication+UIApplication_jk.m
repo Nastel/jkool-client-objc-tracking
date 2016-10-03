@@ -45,7 +45,7 @@
 - (BOOL)heap_sendAction:(SEL)action to:(id)target from:(id)sender forEvent:(UIEvent *)event
     {
         jKoolData *sharedManager = [jKoolData sharedManager];
-        if (![sharedManager disableActions])
+        if ([sharedManager enableActions] && ([sharedManager onlyIfWifi] == NO || ([sharedManager onlyIfWifi] == YES && [jKoolTracking connectionType] == ConnectionTypeWiFi)))
         {
             NSString *selectorName = NSStringFromSelector(action);
             jKoolData *sharedManager = [jKoolData sharedManager];

@@ -15,8 +15,9 @@
 @synthesize correlators;
 @synthesize connectionType;
 @synthesize ipAddress;
-@synthesize disableActions;
-@synthesize disableErrors;
+@synthesize enableActions;
+@synthesize enableErrors;
+@synthesize onlyIfWifi;
 
 #pragma mark Singleton Methods
 

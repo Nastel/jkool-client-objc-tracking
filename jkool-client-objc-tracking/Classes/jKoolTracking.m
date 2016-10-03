@@ -32,7 +32,7 @@
 
 UIBackgroundTaskIdentifier *backgroundUpdateTask;
 
-+ (void) initializeTracking : (NSString *) token
++ (void) initializeTracking : (NSString *) token enableErrors : (bool) enableErrors enableActions : (bool) enableActions onlyIfWifi : (bool) onlyIfWifi
 {
     jKoolData *sharedManager = [jKoolData sharedManager];
     [sharedManager setToken:token];
@@ -44,6 +44,9 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     [[sharedManager jkStreaming] initializeStream:nil];
     [sharedManager setConnectionType :[self connectionType]];
     [sharedManager setIpAddress: [self getIPAddress:YES]];
+    [sharedManager setEnableErrors:enableErrors];
+    [sharedManager setEnableActions:enableActions];
+    [sharedManager setOnlyIfWifi:onlyIfWifi];
 }
 
 + (void) setApplicationName : (NSString *) applName andDataCenter : (NSString *) dataCenter andResource : (NSString *) resource andSsn : (NSString *) ssn andCorrelators: (NSArray *) correlators andActivityName : (NSString *) activityName
@@ -83,12 +86,6 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     }
 }
 
-+ (void) disableStreamErrors : (bool) error  andActions : (bool) action;
-{
-    jKoolData *sharedManager = [jKoolData sharedManager];
-    [sharedManager setDisableErrors:error];
-    [sharedManager setDisableActions:action];
-}
 
 + (void)streamjKoolActivity
 {
@@ -301,7 +298,7 @@ static natural_t get_free_memory(void)
 + (bool) jKoolExceptionHandler: (NSException *) exception;
 {
     jKoolData *sharedManager = [jKoolData sharedManager];
-    if (![sharedManager disableErrors])
+    if ([sharedManager enableErrors])
     {
         NSString *test1 = [exception name ];
         NSString *test2 = [exception reason ];

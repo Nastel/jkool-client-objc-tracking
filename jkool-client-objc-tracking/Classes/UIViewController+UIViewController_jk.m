@@ -39,7 +39,7 @@
                         originalSelector,
                         method_getImplementation(swizzledMethod),
                         method_getTypeEncoding(swizzledMethod));
-        if (didAddMethod && [jKoolTracking connectionType] == ConnectionTypeWiFi)
+        if (didAddMethod)
         {
             class_replaceMethod(class,
                                 swizzledSelector,
@@ -55,6 +55,7 @@
 - (void)jk_viewWillAppear:(BOOL)animated {
     [self jk_viewWillAppear:animated];
     jKoolData *sharedManager = [jKoolData sharedManager];
+    if ([sharedManager onlyIfWifi] == NO || ([sharedManager onlyIfWifi] == NO ||([sharedManager onlyIfWifi] == YES && [jKoolTracking connectionType] == ConnectionTypeWiFi)))
     [sharedManager setVc:NSStringFromClass([self class])];
 }
 @end

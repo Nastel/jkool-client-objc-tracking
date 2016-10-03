@@ -56,8 +56,9 @@ typedef enum {
 @property (nonatomic, retain) NSArray *correlators;
 @property (nonatomic) ConnectionType *connectionType;
 @property (nonatomic, retain) NSString *ipAddress;
-@property (nonatomic) bool *disableErrors;
-@property (nonatomic) bool *disableActions;
+@property (nonatomic) bool *enableErrors;
+@property (nonatomic) bool *enableActions;
+@property (nonatomic) bool *onlyIfWifi;
 
 
 
