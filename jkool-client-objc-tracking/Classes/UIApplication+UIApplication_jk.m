@@ -36,10 +36,7 @@
     
     Method originalMethod = class_getInstanceMethod(class, originalSelector);
     Method replacementMethod = class_getInstanceMethod(class, replacementSelector);
-    if ([jKoolTracking connectionType] == ConnectionTypeWiFi)
-    {
-        method_exchangeImplementations(originalMethod, replacementMethod);
-    }
+    method_exchangeImplementations(originalMethod, replacementMethod);
 }
 
 - (BOOL)heap_sendAction:(SEL)action to:(id)target from:(id)sender forEvent:(UIEvent *)event

@@ -45,7 +45,7 @@
                                 swizzledSelector,
                                 method_getImplementation(originalMethod),
                                 method_getTypeEncoding(originalMethod));
-        } else if ([jKoolTracking connectionType] == ConnectionTypeWiFi)
+        } else 
         {
             method_exchangeImplementations(originalMethod, swizzledMethod);
         }
