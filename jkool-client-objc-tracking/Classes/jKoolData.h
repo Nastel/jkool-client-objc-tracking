@@ -8,9 +8,7 @@
 
 
 #import <foundation/Foundation.h>
-#import "jkActivity.h"
-#import "jkLocation.h"
-#import "jKoolStreaming.h"
+@import jkool_client_objc_api;
 
 typedef enum {
     ConnectionTypeUnknown,
@@ -30,21 +28,22 @@ typedef enum {
     NSString *resource;
     NSString *ssn;
     NSArray *correlators;
-    UIViewController *vc;
+    NSString *vc;
     jkActivity *activity;
     jkLocation *location;
     jKoolStreaming *jkStreaming;
-    ConnectionType *connectionType;
+    ConnectionType connectionType;
     NSString *ipAddress;
-    bool *disableActions;
-    bool *disableErrors;
+    bool disableActions;
+    bool disableErrors;
+    bool onlyIfWifi;
 }
 
 
 
 
 @property (nonatomic, retain) NSString *token;
-@property (nonatomic, retain) UIViewController *vc;
+@property (nonatomic, retain) NSString *vc;
 @property (nonatomic, retain) jkActivity *activity;
 @property (nonatomic, retain) jkLocation *location;
 @property (nonatomic, retain) jKoolStreaming *jkStreaming;
@@ -54,11 +53,11 @@ typedef enum {
 @property (nonatomic, retain) NSString *resource;
 @property (nonatomic, retain) NSString *ssn;
 @property (nonatomic, retain) NSArray *correlators;
-@property (nonatomic) ConnectionType *connectionType;
+@property (nonatomic) ConnectionType connectionType;
 @property (nonatomic, retain) NSString *ipAddress;
-@property (nonatomic) bool *enableErrors;
-@property (nonatomic) bool *enableActions;
-@property (nonatomic) bool *onlyIfWifi;
+@property (nonatomic) bool enableErrors;
+@property (nonatomic) bool enableActions;
+@property (nonatomic) bool onlyIfWifi;
 
 
 

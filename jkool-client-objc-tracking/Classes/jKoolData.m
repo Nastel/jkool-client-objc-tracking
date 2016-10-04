@@ -1,11 +1,11 @@
 #import "jKoolData.h"
-#import "jkLocation.h"
 
 @implementation jKoolData
 
 @synthesize vc;
 @synthesize token;
 @synthesize activity;
+@synthesize activityName;
 @synthesize location;
 @synthesize jkStreaming;
 @synthesize applicationName;
@@ -32,7 +32,7 @@
 
 - (id)init {
     if (self = [super init]) {
-        token = [[NSString alloc] initWithString:@"Default Property Value"];
+        token = @"Default Property Value";
     }
     return self;
 }

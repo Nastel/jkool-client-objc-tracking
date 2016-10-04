@@ -11,7 +11,6 @@
 #import "jkProperty.h"
 #import "jkLocation.h"
 #import "jKoolStreaming.h"
-#import "jKoolData.h"
 #import <mach/mach.h>
 #import <mach/mach_host.h>
 #import <sys/sysctl.h>
@@ -300,13 +299,9 @@ static natural_t get_free_memory(void)
     jKoolData *sharedManager = [jKoolData sharedManager];
     if ([sharedManager enableErrors])
     {
-        NSString *test1 = [exception name ];
-        NSString *test2 = [exception reason ];
-        NSString *test3 = [exception userInfo ];
-        NSString *test4 = [exception callStackSymbols ];
-        NSString *test5 = [exception callStackReturnAddresses ];
+
         jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:[NSString stringWithFormat:@"Uncaught Exception - %@",[exception name]]];
-        [jKoolEvent setResource:[NSString stringWithFormat:@"%@", [sharedManager vc]]];
+        [jKoolEvent setResource:[sharedManager vc]];
         [jKoolEvent setGeoAddr:[[sharedManager location] getCoordinates]];
         [jKoolEvent setParentTrackId:[[sharedManager activity] trackingId]];
         [jKoolEvent setAppl:[sharedManager applicationName]];
