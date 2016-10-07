@@ -1,10 +1,21 @@
-//
-//  jkAppDelegate.m
-//  jkool-client-objc-tracking
-//
-//  Created by jKool developer on 09/20/2016.
-//  Copyright (c) 2016 jKool developer. All rights reserved.
-//
+/*
+ * Copyright (c) 2016 jKool, LLC. All Rights Reserved.
+ *
+ * This software is the confidential and proprietary information of
+ * jKool, LLC. ("Confidential Information").  You shall not disclose
+ * such Confidential Information and shall use it only in accordance with
+ * the terms of the license agreement you entered into with jKool, LLC.
+ *
+ * JKOOL MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE SUITABILITY OF
+ * THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+ * PURPOSE, OR NON-INFRINGEMENT. JKOOL SHALL NOT BE LIABLE FOR ANY DAMAGES
+ * SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING
+ * THIS SOFTWARE OR ITS DERIVATIVES.
+ *
+ * CopyrightVersion 1.0
+ *
+ */
 
 #import "jkAppDelegate.h"
 #import "jKoolTracking.h"
@@ -13,7 +24,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 { 
-    [jKoolTracking initializeTracking:@"your-token" enableErrors:YES enableActions:YES onlyIfWifi:YES];
+    [jKoolTracking initializeTracking:@"HdC0YR5u58UTNyPByFe7GXuHgLFtFx28" enableErrors:YES enableActions:YES onlyIfWifi:YES];
     [jKoolTracking setApplicationName:@"Cathys Application" andDataCenter:@"Cathys Data Center" andResource:@"Activity Resource" andSsn:nil andCorrelators:[NSArray arrayWithObjects:@"123",@"456",@"789", nil] andActivityName:@"Cathys Activity Name"];
     NSSetUncaughtExceptionHandler(&onUncaughtException);
 
