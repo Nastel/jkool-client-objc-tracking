@@ -7,8 +7,7 @@ This pod makes use of the jKool Client API for iOS. The jKool Client API allows 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Author
+# Author
 
 jKool LLC
 
@@ -22,14 +21,6 @@ Include this Api by putting the following in your PodFile:
 ```ruby
 pod 'jkool-client-objc-tracking'
 ```
-
-## Info.plist 
-If you wish to know the location of the user's device in each event, add the following to your app's info.plist under 'Required device capabilities':
-```objective-c
-location-services
-gps
-```
-
 ## Add to AppDelegate
 To get the Tracking working, add the following to your AppDelegate. Please note that 'your-token' you will obtain when your register for jKool.
 
