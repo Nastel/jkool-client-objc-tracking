@@ -37,14 +37,22 @@
     Method originalMethod = class_getInstanceMethod(class, originalSelector);
     Method replacementMethod = class_getInstanceMethod(class, replacementSelector);
     method_exchangeImplementations(originalMethod, replacementMethod);
+    
+    SEL originalEventSelector = @selector(sendEvent:);
+    SEL replacementEventSelector = @selector(heap_sendEvent:);
+    
+    Method originalEventMethod = class_getInstanceMethod(class, originalEventSelector);
+    Method replacementEventMethod = class_getInstanceMethod(class, replacementEventSelector);
+    method_exchangeImplementations(originalEventMethod, replacementEventMethod);
 }
 
 - (BOOL)heap_sendAction:(SEL)action to:(id)target from:(id)sender forEvent:(UIEvent *)event
     {
+        NSString *selectorName = NSStringFromSelector(action);
+        NSLog(@"Sending action %@ from sender %@ to target %@ for event %@", NSStringFromSelector(action), sender, target, event);
         jKoolData *sharedManager = [jKoolData sharedManager];
-        if ([sharedManager enableActions] && (![sharedManager onlyIfWifi] || ([sharedManager onlyIfWifi] && [jKoolTracking connectionType] == ConnectionTypeWiFi)))
+        if (! [selectorName isEqualToString:@"perform:"] && ! [selectorName isEqualToString:@"_sendAction:withEvent:"] && [sharedManager enableActions] && (![sharedManager onlyIfWifi] || ([sharedManager onlyIfWifi] && [jKoolTracking connectionType] == ConnectionTypeWiFi)))
         {
-            NSString *selectorName = NSStringFromSelector(action);
             jKoolData *sharedManager = [jKoolData sharedManager];
             printf("Selector %s occurred.\n", [selectorName UTF8String]);
     
@@ -66,5 +74,16 @@
             [jkStreaming stream:jKoolEvent forUrl:@"event"];
     }
     return [self heap_sendAction:action to:target from:sender forEvent:event];
+}
+
+- (BOOL)heap_sendEvent:(UIEvent *)event
+{
+    UIWindow *window = [self keyWindow];
+    NSSet *touches = [event touchesForWindow:window];
+    for (UITouch *touch in touches) {
+        UIView *touchedView = [window hitTest:[touch locationInView:window] withEvent:event];
+        NSLog(@"Touch %@ received in view %@ for event %@", touch, touchedView, event);
+    }
+    return [self heap_sendEvent:event];
 }
 @end

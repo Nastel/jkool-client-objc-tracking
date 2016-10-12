@@ -21,6 +21,7 @@
 #import <objc/runtime.h>
 #import "jKoolData.h"
 #import "jKoolTracking.h"
+#import "jkEvent.h"
 
 @implementation UIViewController (jk)
 + (void)load {
@@ -49,6 +50,36 @@
         {
             method_exchangeImplementations(originalMethod, swizzledMethod);
         }
+        
+        
+        SEL originalDisappearSelector = @selector(viewWillDisappear:);
+        SEL swizzledDisappearSelector = @selector(jk_viewWillDisappear:);
+        
+        Method originalDisappearMethod = class_getInstanceMethod(class, originalDisappearSelector);
+        Method swizzledDisappearMethod = class_getInstanceMethod(class, swizzledDisappearSelector);
+        
+        BOOL didAddDisappearMethod =
+        class_addMethod(class,
+                        originalDisappearSelector,
+                        method_getImplementation(swizzledDisappearMethod),
+                        method_getTypeEncoding(swizzledDisappearMethod));
+        if (didAddMethod)
+        {
+            class_replaceMethod(class,
+                                swizzledDisappearSelector,
+                                method_getImplementation(originalDisappearMethod),
+                                method_getTypeEncoding(originalDisappearMethod));
+        } else
+        {
+            method_exchangeImplementations(originalDisappearMethod, swizzledDisappearMethod);
+        }
+
+        
+        
+        
+        
+        
+        
     });
 }
 
@@ -57,5 +88,54 @@
     jKoolData *sharedManager = [jKoolData sharedManager];
     if ([sharedManager onlyIfWifi] == NO || ([sharedManager onlyIfWifi] == NO ||([sharedManager onlyIfWifi] == YES && [jKoolTracking connectionType] == ConnectionTypeWiFi)))
     [sharedManager setVc:NSStringFromClass([self class])];
+    
+    // Stream Event
+    jKoolStreaming *jkStreaming = [sharedManager jkStreaming];
+    jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:[NSString stringWithFormat:@"%@", @"viewAppearing"]];
+    [jKoolEvent setResource:[NSString stringWithFormat:@"%@", [sharedManager vc]]];
+    [jKoolEvent setGeoAddr:[[sharedManager location] getCoordinates]];
+    [jKoolEvent setParentTrackId:[[sharedManager activity] trackingId]];
+    [jKoolEvent setAppl:[sharedManager applicationName]];
+    [jKoolEvent setServer:[[UIDevice currentDevice] name]];
+    [jKoolEvent setDataCenter:[sharedManager dataCenter]];
+    [jKoolEvent setSourceSsn:[sharedManager ssn]];
+    [jKoolEvent setNetAddr:[sharedManager ipAddress]];
+    [jKoolEvent setType:JK_TYPE_CALL];
+    [jKoolEvent setJkSeverity:JK_SEV_TRACE];
+    NSUUID *uuid = [NSUUID UUID];
+    [jKoolEvent setUser:[uuid UUIDString]];
+    [jkStreaming stream:jKoolEvent forUrl:@"event"];
+    
+    
+    
+    
+    
+}
+
+- (void)jk_viewWillDisappear:(BOOL)animated {
+    [self jk_viewWillDisappear:animated];
+    jKoolData *sharedManager = [jKoolData sharedManager];
+    if ([sharedManager onlyIfWifi] == NO || ([sharedManager onlyIfWifi] == NO ||([sharedManager onlyIfWifi] == YES && [jKoolTracking connectionType] == ConnectionTypeWiFi)))
+       // [sharedManager setVc:NSStringFromClass([self class])];
+        NSLog(NSStringFromClass([self class]));
+    
+    
+    // Stream Event
+    jKoolStreaming *jkStreaming = [sharedManager jkStreaming];
+    jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:[NSString stringWithFormat:@"%@", @"viewDisappearing"]];
+    [jKoolEvent setResource:NSStringFromClass([self class])];
+    [jKoolEvent setGeoAddr:[[sharedManager location] getCoordinates]];
+    [jKoolEvent setParentTrackId:[[sharedManager activity] trackingId]];
+    [jKoolEvent setAppl:[sharedManager applicationName]];
+    [jKoolEvent setServer:[[UIDevice currentDevice] name]];
+    [jKoolEvent setDataCenter:[sharedManager dataCenter]];
+    [jKoolEvent setSourceSsn:[sharedManager ssn]];
+    [jKoolEvent setNetAddr:[sharedManager ipAddress]];
+    [jKoolEvent setType:JK_TYPE_CALL];
+    [jKoolEvent setJkSeverity:JK_SEV_TRACE];
+    NSUUID *uuid = [NSUUID UUID];
+    [jKoolEvent setUser:[uuid UUIDString]];
+    [jkStreaming stream:jKoolEvent forUrl:@"event"];
+    
 }
 @end
