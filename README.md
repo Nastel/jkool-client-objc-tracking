@@ -24,6 +24,7 @@ pod 'jkool-client-objc-tracking'
 ## Add to AppDelegate
 To get the Tracking working, add the following to your AppDelegate. Please note that 'your-token' you will obtain when your register for jKool.
 
+If you wish to stream uncaught e
 To applicationDidBecomeActive and applicationWillEnterForeground add:
 ```objective-c
 [jKoolTracking createjKoolActivity];
@@ -42,9 +43,9 @@ where:
 * enableErrors - will enable or disable the streaming of uncaught exceptions
 * enableActions - will enable or disable the streaming of actions
 * onlyIfWifi - will enable or disable streaming depending on if Wifi is available.
+* tagToViewName - specify touches you wish to be tracked (please see 'Tracking User Clicks' below)
 
-## Streaming Crashes (optional)
-If you wish to stream uncaught error exceptions, you can easily do so by adding the following to to your AppDelegate's Uncaught Exception Handler (an entire handler is given in case you don't already have one):
+## Streaming Crashes (optional)rror exceptions, you can easily do so by adding the following to to your AppDelegate's Uncaught Exception Handler (an entire handler is given in case you don't already have one):
 ```objective-c
 void onUnCaughtException (NSException *exception)
 {
@@ -63,6 +64,16 @@ Certain fields that will normally be defaulted you can override with you own cus
 ```objective-c
 [jKoolTracking setCustomApplicationName:@"<your-application-name>" andDataCenter:@"<your-data-center>" andResource:@"<your-activity-resource>" andSsn:<your-source> andCorrelators:[NSArray arrayWithObjects:@"<your-custom-correlator>",@"<your-custom-correlator>",..., nil] andActivityName:@"<your-activity-name>"];
 ```
+
+## Tracking User Clicks
+iOS actions and iOS touch events can both be tracked as user clicks. This can be redundant as if a touch event has an action associated with it, the touch would be reported twice, once as a touch event and a second time as an action. However, all touch events are not reported and all actions are reported. Most touch events have actions associated with them, so they are not reported by default. Also, to get intuitive information about a touch event, the developer must help out the API to determine what exactly was touched. This is because iOS does not give touch events intuitive names. So the way this API works in order to solve the problem with intuitive naming of touch events and also to solve the problem of double reporting when touch events are also reported as actions, is to only report touch events if they are specified in a dictionary. So please do the following in the AppDelegate didFinishLaunchingWithOptions if you wish to report a touch events:
+* In the storyboard, tag each touch object you wish to report on with a unique tag number.
+* Create an NSDictionary with keys that equal the unique tags and values that are intuitive names of the touched objects.
+* In the initializeTracking method, specify the NSDictonary as the tagToViewName parameter.
+Doing this will automatically cause the API to report on objects you tagged.
+
+
+
 ## Seeing results
 
 There is an Example app in this pod. It contains a complete working app with all of the above mentioned code in it. Simply replace “your-token” with the token that was assigned to you when you registered for jKool. To get a feel for this Tracking API, we recommend you do the following:
