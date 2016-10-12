@@ -24,7 +24,6 @@ pod 'jkool-client-objc-tracking'
 ## Add to AppDelegate
 To get the Tracking working, add the following to your AppDelegate. Please note that 'your-token' you will obtain when your register for jKool.
 
-If you wish to stream uncaught e
 To applicationDidBecomeActive and applicationWillEnterForeground add:
 ```objective-c
 [jKoolTracking createjKoolActivity];
@@ -45,7 +44,9 @@ where:
 * onlyIfWifi - will enable or disable streaming depending on if Wifi is available.
 * tagToViewName - specify touches you wish to be tracked (please see 'Tracking User Clicks' below)
 
-## Streaming Crashes (optional)rror exceptions, you can easily do so by adding the following to to your AppDelegate's Uncaught Exception Handler (an entire handler is given in case you don't already have one):
+## Streaming Crashes (optional)
+
+If you wish to stream uncaught error exceptions, you can easily do so by adding the following to to your AppDelegate's Uncaught Exception Handler (an entire handler is given in case you don't already have one):
 ```objective-c
 void onUnCaughtException (NSException *exception)
 {
