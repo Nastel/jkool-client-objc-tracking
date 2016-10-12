@@ -48,6 +48,7 @@ typedef enum {
     bool disableActions;
     bool disableErrors;
     bool onlyIfWifi;
+    NSDictionary *tagToViewName;
 }
 
 
@@ -69,7 +70,7 @@ typedef enum {
 @property (nonatomic) bool enableErrors;
 @property (nonatomic) bool enableActions;
 @property (nonatomic) bool onlyIfWifi;
-
+@property (nonatomic, retain) NSDictionary *tagToViewName;
 
 
 

@@ -78,11 +78,34 @@
 
 - (BOOL)heap_sendEvent:(UIEvent *)event
 {
+    jKoolData *sharedManager = [jKoolData sharedManager];
     UIWindow *window = [self keyWindow];
     NSSet *touches = [event touchesForWindow:window];
     for (UITouch *touch in touches) {
         UIView *touchedView = [window hitTest:[touch locationInView:window] withEvent:event];
-        NSLog(@"Touch %@ received in view %@ for event %@", touch, touchedView, event);
+        NSString *key = [NSString stringWithFormat:@"%i",[touchedView tag]];
+        if ([[sharedManager tagToViewName] objectForKey:key] != nil)
+        {
+            // Stream Event
+            jKoolStreaming *jkStreaming = [sharedManager jkStreaming];
+            NSString *touchedViewName = [[sharedManager tagToViewName] objectForKey:[NSString stringWithFormat:@"%i",[touchedView tag]]];
+            jkEvent *jKoolEvent = [[jkEvent alloc] initWithName:[NSString stringWithFormat:@"touched %@",touchedViewName]];
+            [jKoolEvent setResource:[NSString stringWithFormat:@"%@", [sharedManager vc]]];
+            [jKoolEvent setGeoAddr:[[sharedManager location] getCoordinates]];
+            [jKoolEvent setParentTrackId:[[sharedManager activity] trackingId]];
+            [jKoolEvent setAppl:[sharedManager applicationName]];
+            [jKoolEvent setServer:[[UIDevice currentDevice] name]];
+            [jKoolEvent setDataCenter:[sharedManager dataCenter]];
+            [jKoolEvent setSourceSsn:[sharedManager ssn]];
+            [jKoolEvent setNetAddr:[sharedManager ipAddress]];
+            [jKoolEvent setType:JK_TYPE_CALL];
+            [jKoolEvent setJkSeverity:JK_SEV_TRACE];
+            NSUUID *uuid = [NSUUID UUID];
+            [jKoolEvent setUser:[uuid UUIDString]];
+            [jkStreaming stream:jKoolEvent forUrl:@"event"];
+
+            NSLog(@"Touch received in view %@",[[sharedManager tagToViewName] objectForKey:[NSString stringWithFormat:@"%i",[touchedView tag]]]);
+        }
     }
     return [self heap_sendEvent:event];
 }

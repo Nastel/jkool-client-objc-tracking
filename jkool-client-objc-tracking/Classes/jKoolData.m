@@ -37,6 +37,7 @@
 @synthesize enableActions;
 @synthesize enableErrors;
 @synthesize onlyIfWifi;
+@synthesize tagToViewName;
 
 #pragma mark Singleton Methods
 

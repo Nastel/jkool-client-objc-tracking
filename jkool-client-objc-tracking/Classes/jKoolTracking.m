@@ -42,7 +42,7 @@
 
 UIBackgroundTaskIdentifier *backgroundUpdateTask;
 
-+ (void) initializeTracking : (NSString *) token enableErrors : (bool) enableErrors enableActions : (bool) enableActions onlyIfWifi : (bool) onlyIfWifi
++ (void) initializeTracking : (NSString *) token enableErrors : (bool) enableErrors enableActions : (bool) enableActions onlyIfWifi : (bool) onlyIfWifi tagToViewName:(NSDictionary *) tagToViewName
 {
     jKoolData *sharedManager = [jKoolData sharedManager];
     [sharedManager setToken:token];
@@ -57,6 +57,7 @@ UIBackgroundTaskIdentifier *backgroundUpdateTask;
     [sharedManager setEnableErrors:enableErrors];
     [sharedManager setEnableActions:enableActions];
     [sharedManager setOnlyIfWifi:onlyIfWifi];
+    [sharedManager setTagToViewName:tagToViewName];
 }
 
 + (void) setApplicationName : (NSString *) applName andDataCenter : (NSString *) dataCenter andResource : (NSString *) resource andSsn : (NSString *) ssn andCorrelators: (NSArray *) correlators andActivityName : (NSString *) activityName
