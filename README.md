@@ -70,7 +70,7 @@ iOS actions and iOS touch events can both be tracked as user clicks. This can be
 * In the storyboard, tag each touch object you wish to report on with a unique tag number.
 * Create an NSDictionary with keys that equal the unique tags and values that are intuitive names of the touched objects.
 * In the initializeTracking method, specify the NSDictonary as the tagToViewName parameter.
-Doing this will automatically cause the API to report on objects you tagged.
+Doing this will automatically cause the API to report touch events for the objects you tagged.
 
 
 
