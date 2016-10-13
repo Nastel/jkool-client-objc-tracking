@@ -74,6 +74,8 @@ where:
 ## Streaming Crashes (optional)
 
 If you wish to stream uncaught error exceptions, you can easily do so by adding the following to to your AppDelegate's Uncaught Exception Handler (an entire handler is given in case you don't already have one):
+
+obj-c
 ```objective-c
 void onUnCaughtException (NSException *exception)
 {
@@ -85,6 +87,16 @@ void onUnCaughtException (NSException *exception)
 With the following in didFinishLaunchWithOptions
 ```objective-c
 NSSetUncaughtExceptionHandler(&onUncaughtException);
+```
+swift
+```swift
+NSSetUncaughtExceptionHandler
+        {
+            exception in
+            jKoolTracking.jKoolExceptionHandler(exception);
+            // Sleeping is necessary to give it time to stream.
+            sleep(5);
+        }
 ```
 
 ## Custom Fields (optional)
