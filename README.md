@@ -96,7 +96,7 @@ obj-c
 ```
 swift
 ```swift
-let corrs : Array = ["<your correlator>","<your correlator>","<your correlator> ..."];
+let corrs : Array = ["<your-custom-correlator>","<your-custom-correlator>","<your-custom-correlator> ..."];
 jKoolTracking.setCustomApplicationName("<your-application-name>", andDataCenter:"<your-data-center>", andResource:"<your-activity-resource>", andSsn:<your-source>, andCorrelators:corrs,@"<your-custom-correlator>",..., nil], andActivityName:"<your-activity-name>"];
 ```
 
