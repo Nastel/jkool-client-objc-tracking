@@ -103,7 +103,7 @@ jKoolTracking.setCustomApplicationName("<your-application-name>", andDataCenter:
 ## Tracking User Clicks
 iOS actions and iOS touch events can both be tracked as user clicks. This can be redundant as if a touch event has an action associated with it, the touch would be reported twice, once as a touch event and a second time as an action. However, all touch events are not reported and all actions are reported. Most touch events have actions associated with them, so they are not reported by default. Also, to get intuitive information about a touch event, the developer must help out the API to determine what exactly was touched. This is because iOS does not give touch events intuitive names. So the way this API works in order to solve the problem with intuitive naming of touch events and also to solve the problem of double reporting when touch events are also reported as actions, is to only report touch events if they are specified in a dictionary. So please do the following in the AppDelegate didFinishLaunchingWithOptions if you wish to report a touch events:
 * In the storyboard, tag each touch object you wish to report on with a unique tag number.
-* Create an NSDictionary with keys that equal the unique tags and values that are intuitive names of the touched objects.
+* Create an NSDictionary (Objective-c) Dictionary (Swift) with keys that equal the unique tags and values that are intuitive names of the touched objects.
 * In the initializeTracking method, specify the NSDictonary as the tagToViewName parameter.
 Doing this will automatically cause the API to report touch events for the objects you tagged.
 
