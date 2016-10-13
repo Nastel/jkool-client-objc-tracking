@@ -89,6 +89,7 @@ With the following in didFinishLaunchWithOptions
 NSSetUncaughtExceptionHandler(&onUncaughtException);
 ```
 swift
+
 With the following in didFinishLaunchWithOptions
 ```swift
 NSSetUncaughtExceptionHandler
