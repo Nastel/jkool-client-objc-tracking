@@ -34,22 +34,22 @@ To get the Tracking working, add the following to your AppDelegate. Please note 
 
 To applicationDidBecomeActive and applicationWillEnterForeground add:
 
-obj-c
+Obj-c
 ```objective-c
 [jKoolTracking createjKoolActivity];
 ```
-swift
+Swift
 ```swift
 jKoolTracking.createjKoolActivity();
 ```
 
 To applicationDidEnterBackground add:
 
-obj-c
+Obj-c
 ```objective-c
 [jKoolTracking streamjKoolActivity];
 ```
-swift
+Swift
 ```swift
 jKoolTracking.streamjKoolActivity();
 ```
@@ -57,11 +57,11 @@ jKoolTracking.streamjKoolActivity();
 
 To didFinishLaunchingWithOptions add:
 
-obj-c
+Obj-c
 ```objective-c
 [jKoolTracking initializeTracking:@"your-token" enableErrors:<YES/NO> enableActions:<YES/NO> onlyIfWifi:<YES/NO>];
 ```
-swift
+Swift
 ```swift
 jKoolTracking.initializeTracking("your-token", enableErrors:<true/false>, enableActions:<true/false>, onlyIfWifi:<true/false>, tagToViewName:nil]; // see below how to use a tagToViewName parameter.
 ```
@@ -75,7 +75,7 @@ where:
 
 If you wish to stream uncaught error exceptions, you can easily do so by adding the following to to your AppDelegate's Uncaught Exception Handler (an entire handler is given in case you don't already have one):
 
-obj-c
+Obj-c
 ```objective-c
 void onUnCaughtException (NSException *exception)
 {
@@ -88,7 +88,7 @@ With the following in didFinishLaunchWithOptions
 ```objective-c
 NSSetUncaughtExceptionHandler(&onUncaughtException);
 ```
-swift
+Swift
 
 With the following in didFinishLaunchWithOptions
 ```swift
@@ -104,11 +104,11 @@ NSSetUncaughtExceptionHandler
 ## Custom Fields (optional)
 Certain fields that will normally be defaulted you can override with you own custom data. To set these fields, add the following method call to didFinishLaunchingWithOptions:
 
-obj-c
+Obj-c
 ```objective-c
 [jKoolTracking setCustomApplicationName:@"<your-application-name>" andDataCenter:@"<your-data-center>" andResource:@"<your-activity-resource>" andSsn:<your-source> andCorrelators:[NSArray arrayWithObjects:@"<your-custom-correlator>",@"<your-custom-correlator>",..., nil] andActivityName:@"<your-activity-name>"];
 ```
-swift
+Swift
 ```swift
 let corrs : Array = ["<your-custom-correlator>","<your-custom-correlator>","<your-custom-correlator> ..."];
 jKoolTracking.setCustomApplicationName("<your-application-name>", andDataCenter:"<your-data-center>", andResource:"<your-activity-resource>", andSsn:<your-source>, andCorrelators:corrs,@"<your-custom-correlator>",..., nil], andActivityName:"<your-activity-name>"];
