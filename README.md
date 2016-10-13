@@ -21,6 +21,14 @@ Include this Api by putting the following in your PodFile:
 ```ruby
 pod 'jkool-client-objc-tracking'
 ```
+
+##Bridging for Swift:
+If you wish this CocoaPod to work in a Swift app, you simply need to create a Bridge.m file and include the following headers. When creating Bridge.m, click the option to 'Create Bridging Header'. Below Swift example code is given in addition to the  Objective-c code.
+```objective-c
+#import "jKoolTracking.h"
+#import "jKoolData.h"
+```
+
 ## Add to AppDelegate
 To get the Tracking working, add the following to your AppDelegate. Please note that 'your-token' you will obtain when your register for jKool.
 
@@ -29,14 +37,27 @@ To applicationDidBecomeActive and applicationWillEnterForeground add:
 [jKoolTracking createjKoolActivity];
 ```
 
+```swift
+jKoolTracking.createjKoolActivity();
+```
+
 To applicationDidEnterBackground add:
 ```objective-c
 [jKoolTracking streamjKoolActivity];
 ```
 
+```swift
+jKoolTracking.streamjKoolActivity();
+```
+
+
 To didFinishLaunchingWithOptions add:
 ```objective-c
 [jKoolTracking initializeTracking:@"your-token" enableErrors:<YES/NO> enableActions:<YES/NO> onlyIfWifi:<YES/NO>];
+```
+
+```swift
+jKoolTracking.initializeTracking("your-token", enableErrors:<true/false>, enableActions:<true/false>, onlyIfWifi:<true/false>, tagToViewName:nil]; // see below when how to use a tagToViewName parameter.
 ```
 where:
 * enableErrors - will enable or disable the streaming of uncaught exceptions
