@@ -33,31 +33,34 @@ If you wish this CocoaPod to work in a Swift app, you simply need to create a Br
 To get the Tracking working, add the following to your AppDelegate. Please note that 'your-token' you will obtain when your register for jKool.
 
 To applicationDidBecomeActive and applicationWillEnterForeground add:
+obj-c
 ```objective-c
 [jKoolTracking createjKoolActivity];
 ```
-
+swift
 ```swift
 jKoolTracking.createjKoolActivity();
 ```
 
 To applicationDidEnterBackground add:
+obj-c
 ```objective-c
 [jKoolTracking streamjKoolActivity];
 ```
-
+swift
 ```swift
 jKoolTracking.streamjKoolActivity();
 ```
 
 
 To didFinishLaunchingWithOptions add:
+obj-c
 ```objective-c
 [jKoolTracking initializeTracking:@"your-token" enableErrors:<YES/NO> enableActions:<YES/NO> onlyIfWifi:<YES/NO>];
 ```
-
+swift
 ```swift
-jKoolTracking.initializeTracking("your-token", enableErrors:<true/false>, enableActions:<true/false>, onlyIfWifi:<true/false>, tagToViewName:nil]; // see below when how to use a tagToViewName parameter.
+jKoolTracking.initializeTracking("your-token", enableErrors:<true/false>, enableActions:<true/false>, onlyIfWifi:<true/false>, tagToViewName:nil]; // see below how to use a tagToViewName parameter.
 ```
 where:
 * enableErrors - will enable or disable the streaming of uncaught exceptions
