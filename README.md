@@ -44,6 +44,7 @@ jKoolTracking.createjKoolActivity();
 ```
 
 To applicationDidEnterBackground add:
+
 obj-c
 ```objective-c
 [jKoolTracking streamjKoolActivity];
@@ -55,6 +56,7 @@ jKoolTracking.streamjKoolActivity();
 
 
 To didFinishLaunchingWithOptions add:
+
 obj-c
 ```objective-c
 [jKoolTracking initializeTracking:@"your-token" enableErrors:<YES/NO> enableActions:<YES/NO> onlyIfWifi:<YES/NO>];
