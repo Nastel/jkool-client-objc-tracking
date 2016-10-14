@@ -23,7 +23,7 @@ pod 'jkool-client-objc-tracking'
 ```
 
 ##Bridging for Swift:
-If you wish this CocoaPod to work in a Swift app, you simply need to create a Bridge.m file and include the following headers. When creating Bridge.m, click the option to 'Create Bridging Header'. The code examples in this ReadMe are in both Swift and bjective-c code.
+If you wish this CocoaPod to work in a Swift app, you simply need to create a Bridge.m file and include the following headers. When creating Bridge.m, click the option to 'Create Bridging Header'. The code examples in this ReadMe are in both Swift and Objective-c.
 ```objective-c
 #import "jKoolTracking.h"
 #import "jKoolData.h"
